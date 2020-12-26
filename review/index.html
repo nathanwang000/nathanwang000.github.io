@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+
+    <title>Jiaxuan Wang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link rel="shortcut icon"
+      href="/static/favicon.ico?version=0.04"
+      type="image/x-icon">
+<link rel="icon"
+      href="/static/favicon.ico"
+      type="image/png">
+
+  </head>
+  <body>
+    
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Jiaxuan Wang 王家轩 |</a>
+            <a class="navbar-brand" href="/cv">CV</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+	    <!-- <li><a href="/replication">replication</a></li> -->
+	    <!-- <li><a href="/review">review</a></li>-->
+	    <li><a href="/random">random</a></li>
+          </ul>
+        </div>
+    </div>
+</div>
+
+    
+<div class="container">
+  
+  
+ 
+<div class="wrapper">
+  This section holds reviews I wrote while reading papers. Hopefully I will find
+  them useful later. Visit <a href='https://gitlab.eecs.umich.edu/mld3/mld3-group-resources'>Jenna's lab website</a> for more advice on writing. <br/><br/>
+
+  <ul>
+  
+  <li><a href="reviews/sparse_max.txt">reviews/sparse_max.txt</a></li>
+  
+  <li><a href="reviews/jenna_example.txt">reviews/jenna_example.txt</a></li>
+  
+  <li><a href="reviews/multi_attn_multi_class_constraint.txt">reviews/multi_attn_multi_class_constraint.txt</a></li>
+  
+  </ul>
+  
+</div>
+
+</div>
+
+
+    
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js" integrity="sha256-AdQN98MVZs44Eq2yTwtoKufhnU+uZ7v2kXnD5vqzZVo=" crossorigin="anonymous"></script>
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {
+    $(elem).text(eval('moment("' + $(elem).data('timestamp') + '").' + $(elem).data('format') + ';'));
+    $(elem).removeClass('flask-moment').show();
+}
+function flask_moment_render_all() {
+    $('.flask-moment').each(function() {
+        flask_moment_render(this);
+        if ($(this).data('refresh')) {
+            (function(elem, interval) { setInterval(function() { flask_moment_render(elem) }, interval); })(this, $(this).data('refresh'));
+        }
+    })
+}
+$(document).ready(function() {
+    flask_moment_render_all();
+});
+</script>
+<script>
+moment.locale("en");
+</script>
+
+  </body>
+</html>

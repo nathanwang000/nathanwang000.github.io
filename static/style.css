@@ -1,0 +1,180 @@
+/* /\* http://meyerweb.com/eric/tools/css/reset/  */
+/*    v2.0 | 20110126 */
+/*    License: none (public domain) */
+/* *\/ */
+
+/* html, body, div, span, applet, object, iframe, */
+/* h1, h2, h3, h4, h5, h6, p, blockquote, pre, */
+/* a, abbr, acronym, address, big, cite, code, */
+/* del, dfn, em, img, ins, kbd, q, s, samp, */
+/* small, strike, strong, sub, sup, tt, var, */
+/* b, u, i, center, */
+/* dl, dt, dd, ol, ul, li, */
+/* fieldset, form, label, legend, */
+/* table, caption, tbody, tfoot, thead, tr, th, td, */
+/* article, aside, canvas, details, embed,  */
+/* figure, figcaption, footer, header, hgroup,  */
+/* menu, nav, output, ruby, section, summary, */
+/* time, mark, audio, video { */
+/*     margin: 0; */
+/*     padding: 0; */
+/*     border: 0; */
+/*     font-size: 100%; */
+/*     font: inherit; */
+/*     vertical-align: baseline; */
+/* } */
+/* /\* HTML5 display-role reset for older browsers *\/ */
+/* article, aside, details, figcaption, figure,  */
+/* footer, header, hgroup, menu, nav, section { */
+/*     display: block; */
+/* } */
+/* body { */
+/*     line-height: 1; */
+/* } */
+/* ol, ul { */
+/*     list-style: none; */
+/* } */
+/* blockquote, q { */
+/*     quotes: none; */
+/* } */
+/* blockquote:before, blockquote:after, */
+/* q:before, q:after { */
+/*     content: ''; */
+/*     content: none; */
+/* } */
+/* table { */
+/*     border-collapse: collapse; */
+/*     border-spacing: 0; */
+/* } */
+
+/* after reset */
+body {
+    width: 700px;
+    height: 700px;
+    margin: 10px auto;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    position: relative;
+    top: 2%;
+    width: 94%;
+    height: 35%;
+    margin: 2%;
+    padding: 1%;
+    overflow: hidden;
+}
+
+header div {
+    height: 20%;
+}
+
+header div img {
+    width: 3%;
+    height: 60%;
+    float: left;
+    padding: 0%;
+    margin: 1.1% 0% 1% 23%;
+}
+
+header div h1 {
+    width: 50%;
+    text-align: center;
+    float: left;
+    margin: 1% 1% 1% 0%;
+    padding: 0%;
+}
+
+header nav {
+    position: relative;
+    height: 70%;
+    margin: 2% auto;
+    padding: 0%;
+}
+
+header nav div {
+    position: absolute;
+    float: left;
+    margin: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+#divalien {
+    left: 0%;
+}
+
+#divalien2 {
+    left: 300%;
+}
+
+#divsnake {
+    left: 100%;
+}
+
+#div2048 {
+    left: 200%;
+}
+
+#div2048 img {
+    width: 20%;
+}
+
+#div2048 p {
+    width: 70%;
+}
+
+header nav img {
+    width: 40%;
+    height: 90%;
+    margin: 1%;
+    float: left;
+}
+
+header nav p {
+    float: left;
+    width: 50%;
+    height: 90%;
+    margin: 1%;
+}
+
+#content {
+    position: relative;
+    top: 2%;
+    width: 94%;
+    height: 40%;
+    margin: 2%;
+    padding: 1%;
+}
+
+#content article {
+    display: block;
+    float: right;
+    height: 90%;
+    width: 70%;
+    margin: 1%;
+}
+
+#content aside {
+    display: block;
+    float: left;
+    height: 90%;
+    width: 22%;
+    margin: 1%;
+}
+
+footer {
+    position: relative;
+    top: 2%;
+    width: 94%;
+    margin: 2%;
+    padding: 1%;
+}
