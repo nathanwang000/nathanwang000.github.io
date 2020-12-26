@@ -1,0 +1,33 @@
+img {
+    border-radius: 10px;
+}
+
+.wrapper {
+    background-color: #f9f8f6;
+    border-radius: 15px;
+}
+
+header {
+    background-color: rgb(227, 230, 248);
+    border-radius: 15px;
+}
+
+#content {
+    background-color: rgb(227, 230, 248);
+    border-radius: 15px;
+}
+
+#content aside {
+    background-color: rgb(247, 250, 250);
+    border-radius: 15px;
+}
+
+#content article {
+    background-color: rgb(247, 250, 250);
+    border-radius: 15px;
+}
+
+#photo {
+    width: 100%;
+    height: 100%;
+}

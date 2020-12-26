@@ -1,0 +1,60 @@
+body {
+    border: 1px solid black;
+}
+
+.wrapper {
+    border: 1px solid blue;
+}
+
+header {
+    border: 1px solid blue;
+}
+
+header div {
+    border: 1px solid red;
+}
+
+header div img {
+    border: 1px solid yellow;
+}
+
+header div h1 {
+    border: 1px solid yellow;
+}
+
+header nav {
+    border: 1px solid red;
+}
+
+header nav div {
+    border: 1px solid yellow;
+}
+
+header nav img, header nav p {
+    border: 1px solid green;
+}
+
+#content {
+    border: 1px solid blue;
+}
+
+#content article {
+    border: 1px solid red;
+}
+
+#content aside {
+    border: 1px solid red;
+}
+
+footer {
+    border: 1px solid blue;
+}
+
+
+
+
+
+
+
+
+
