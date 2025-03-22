@@ -7,9 +7,8 @@
     <link rel="icon"
           href="/static/favicon.ico"
           type="image/png">
-
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/tone"></script>
+    <!-- <script src="https://unpkg.com/tone"></script> -->
     <style>
         body {
             display: flex;
@@ -83,13 +82,40 @@
 
         @media (max-width: 768px) {
             .piano {
-                transform: scale(0.8);
+                transform: scale(0.9);
+                transform-origin: center top;
+                margin-bottom: 20px;
+            }
+
+            .key {
+                width: 45px;
+            }
+
+            .key.black {
+                width: 28px;
             }
         }
 
         @media (max-width: 600px) {
             .piano {
-                transform: scale(0.6);
+                transform: scale(0.8);
+                transform-origin: center top;
+            }
+
+            body {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .piano {
+                transform: scale(0.7);
+                transform-origin: center top;
+            }
+
+            .controls-container {
+                transform: scale(0.9);
+                transform-origin: bottom right;
             }
         }
 
@@ -259,7 +285,7 @@
     </div>
 
     <div class="piano">
-        <div class="instrument-text">Scale: Major</div>
+        <div class="instrument-text">Scale: Major, Root: C4</div>
         <div class="key" data-note="C4" data-key="a"><span class="key-label">A</span></div>
         <div class="key black" data-note="C#4" data-key="w"><span class="key-label">W</span></div>
         <div class="key" data-note="D4" data-key="s"><span class="key-label">S</span></div>
@@ -282,47 +308,91 @@
     <script>
 
         // Create audio context initialization for mobile
-function initAudioContext() {
-    const audioMessage = document.createElement('div');
-    audioMessage.id = 'audio-message';
-    audioMessage.textContent = 'Tap to enable sound';
-    audioMessage.style.position = 'fixed';
-    audioMessage.style.top = '0';
-    audioMessage.style.left = '0';
-    audioMessage.style.width = '100%';
-    audioMessage.style.padding = '10px';
-    audioMessage.style.backgroundColor = '#4CAF50';
-    audioMessage.style.color = 'white';
-    audioMessage.style.textAlign = 'center';
-    audioMessage.style.zIndex = '1000';
-    audioMessage.style.boxShadow = '0 2px 4px rgba(0,0,0,0.3)'; // Add shadow for visibility
-    audioMessage.style.fontWeight = 'bold'; // Make text more visible
-    document.body.appendChild(audioMessage);
+        function initAudioContext() {
+            const audioMessage = document.createElement('div');
+            audioMessage.id = 'audio-message';
+            audioMessage.textContent = 'Tap to enable sound';
+            audioMessage.style.position = 'fixed';
+            audioMessage.style.top = '0';
+            audioMessage.style.left = '0';
+            audioMessage.style.width = '100%';
+            audioMessage.style.padding = '10px';
+            audioMessage.style.backgroundColor = '#4CAF50';
+            audioMessage.style.color = 'white';
+            audioMessage.style.textAlign = 'center';
+            audioMessage.style.zIndex = '1000';
+            audioMessage.style.boxShadow = '0 2px 4px rgba(0,0,0,0.3)';
+            audioMessage.style.fontWeight = 'bold';
+            audioMessage.style.cursor = 'pointer'; // Add cursor pointer to show it's clickable
+            document.body.appendChild(audioMessage);
 
-    async function startAudio() {
-        if (Tone.context.state !== 'running') {
-            await Tone.start(); // This is a more complete way to initialize Tone.js
-            console.log('Audio context started');
-            document.body.removeChild(audioMessage);
-        } else {
-            if (document.body.contains(audioMessage)) {
-                document.body.removeChild(audioMessage);
+            // Function to load Tone.js dynamically
+            function loadToneJs() {
+                return new Promise((resolve, reject) => {
+                    // If Tone is already defined, resolve immediately
+                    if (window.Tone) {
+                        resolve(window.Tone);
+                        return;
+                    }
+
+                    // Create script element to load Tone.js
+                    const script = document.createElement('script');
+                    script.src = 'https://unpkg.com/tone';
+                    script.async = true;
+
+                    script.onload = () => {
+                        console.log('Tone.js loaded successfully');
+                        resolve(window.Tone);
+                    };
+
+                    script.onerror = () => {
+                        reject(new Error('Failed to load Tone.js'));
+                    };
+
+                    document.head.appendChild(script);
+                });
             }
-        }
-        document.removeEventListener('touchstart', startAudio);
-        document.removeEventListener('mousedown', startAudio);
-        document.removeEventListener('keydown', startAudio);
-    }
 
-    document.addEventListener('touchstart', startAudio);
-    document.addEventListener('mousedown', startAudio);
-    document.addEventListener('keydown', startAudio);
-}
+            async function startAudio() {
+                try {
+                    // First load Tone.js if not already loaded
+                    const Tone = await loadToneJs();
+
+                    // Then start audio context
+                    await Tone.start();
+                    console.log('Audio context started');
+
+                    // Remove message and initialize the keyboard
+                    document.body.removeChild(audioMessage);
+                    initializeKeyboard();
+                } catch (error) {
+                    console.error('Error starting audio:', error);
+                    audioMessage.textContent = 'Error loading audio. Tap to try again.';
+                }
+
+                // Remove event listeners
+                document.removeEventListener('touchstart', startAudio);
+                document.removeEventListener('mousedown', startAudio);
+                document.removeEventListener('keydown', startAudio);
+                if (audioMessage) {
+                    audioMessage.removeEventListener('click', startAudio);
+                }
+            }
+
+            // Add click handler directly to the message
+            audioMessage.addEventListener('click', startAudio);
+
+            // Also listen for any interaction
+            document.addEventListener('touchstart', startAudio);
+            document.addEventListener('mousedown', startAudio);
+            document.addEventListener('keydown', startAudio);
+        }
 
         // Call the function to set up audio context initialization
         initAudioContext();
 
-        window.addEventListener('load', () => {
+        // window.addEventListener('load', () => {
+        function initializeKeyboard() {
             const piano = document.querySelector('.piano');
             const keys = document.querySelectorAll('.key');
             const pressedKeys = new Set();
@@ -1219,6 +1289,201 @@ function initAudioContext() {
                 document.body.appendChild(controlsContainer);
             }
 
+            function createMobileControls() {
+                // Only create mobile controls if we're on a touch device
+                if (!('ontouchstart' in window)) return;
+
+                const mobileControlsContainer = document.createElement('div');
+                mobileControlsContainer.className = 'mobile-controls';
+                mobileControlsContainer.style.display = 'flex';
+                mobileControlsContainer.style.flexWrap = 'wrap';
+                mobileControlsContainer.style.gap = '8px';
+                mobileControlsContainer.style.padding = '10px';
+                mobileControlsContainer.style.backgroundColor = 'rgba(18, 18, 18, 0.8)';
+                mobileControlsContainer.style.borderRadius = '10px';
+                mobileControlsContainer.style.marginTop = '15px';
+                mobileControlsContainer.style.justifyContent = 'center';
+                mobileControlsContainer.style.maxWidth = '100%';
+                mobileControlsContainer.style.boxSizing = 'border-box';
+
+                // Create octave controls
+                const octaveControls = createControlGroup('Octave');
+                const octaveUpBtn = createControlButton('↑', 'Octave Up');
+                const octaveDownBtn = createControlButton('↓', 'Octave Down');
+
+                octaveUpBtn.addEventListener('click', () => {
+                    octave = Math.min(octave + 1, 8);
+                    updateNotes();
+                    updateInstrumentText();
+                    releaseAllKeys();
+                });
+
+                octaveDownBtn.addEventListener('click', () => {
+                    octave = Math.max(octave - 1, 0);
+                    updateNotes();
+                    updateInstrumentText();
+                    releaseAllKeys();
+                });
+
+                octaveControls.appendChild(octaveUpBtn);
+                octaveControls.appendChild(octaveDownBtn);
+
+                // Create root note controls
+                const rootControls = createControlGroup('Root');
+                const rootLeftBtn = createControlButton('←', 'Previous Root');
+                const rootRightBtn = createControlButton('→', 'Next Root');
+
+                rootLeftBtn.addEventListener('click', () => {
+                    const currentRootIndex = notes.indexOf(rootNote);
+                    if (currentRootIndex > 0) {
+                        rootNote = notes[currentRootIndex - 1];
+                    } else {
+                        rootNote = notes[11];
+                    }
+                    updateNotes();
+                    updateInstrumentText();
+                    releaseAllKeys();
+                });
+
+                rootRightBtn.addEventListener('click', () => {
+                    const currentRootIndex = notes.indexOf(rootNote);
+                    if (currentRootIndex < 11) {
+                        rootNote = notes[currentRootIndex + 1];
+                    } else {
+                        rootNote = notes[0];
+                    }
+                    updateNotes();
+                    updateInstrumentText();
+                    releaseAllKeys();
+                });
+
+                rootControls.appendChild(rootLeftBtn);
+                rootControls.appendChild(rootRightBtn);
+
+                // Create scale selector
+                const scaleControls = createControlGroup('Scale');
+
+                // Create scale buttons
+                for (let i = 1; i <= 9; i++) {
+                    const scaleBtn = createControlButton(i.toString(), scales[i].name);
+                    scaleBtn.addEventListener('click', () => {
+                        currentScale = i;
+                        updateNotes();
+                        updateInstrumentText();
+                        releaseAllKeys();
+
+                        // Highlight active scale button
+                        document.querySelectorAll('.scale-btn').forEach(btn => {
+                            btn.style.backgroundColor = '#616161';
+                        });
+                        scaleBtn.style.backgroundColor = '#4CAF50';
+                    });
+                    scaleBtn.classList.add('scale-btn');
+                    if (i === currentScale) {
+                        scaleBtn.style.backgroundColor = '#4CAF50';
+                    }
+                    scaleControls.appendChild(scaleBtn);
+                }
+
+                // // Add velocity control (substitute for Shift key)
+                // const velocityControls = createControlGroup('Velocity');
+                // const velocitySlider = document.createElement('input');
+                // velocitySlider.type = 'range';
+                // velocitySlider.min = '0.1';
+                // velocitySlider.max = '1.0';
+                // velocitySlider.step = '0.1';
+                // velocitySlider.value = velocity.toString();
+                // velocitySlider.style.width = '100%';
+                // velocitySlider.style.accentColor = '#4CAF50';
+
+                // velocitySlider.addEventListener('input', () => {
+                //     velocity = parseFloat(velocitySlider.value);
+                // });
+
+                // velocityControls.appendChild(velocitySlider);
+
+                // Add all control groups to the container
+                mobileControlsContainer.appendChild(octaveControls);
+                mobileControlsContainer.appendChild(rootControls);
+                mobileControlsContainer.appendChild(scaleControls);
+                // mobileControlsContainer.appendChild(velocityControls);
+
+                // Add collapse/expand button
+                const toggleControlsBtn = document.createElement('button');
+                toggleControlsBtn.textContent = '▼';
+                toggleControlsBtn.style.position = 'absolute';
+                toggleControlsBtn.style.top = '5px';
+                toggleControlsBtn.style.right = '5px';
+                toggleControlsBtn.style.backgroundColor = 'transparent';
+                toggleControlsBtn.style.border = 'none';
+                toggleControlsBtn.style.color = 'white';
+                toggleControlsBtn.style.fontSize = '12px';
+                toggleControlsBtn.style.padding = '5px';
+                toggleControlsBtn.style.cursor = 'pointer';
+
+                mobileControlsContainer.appendChild(toggleControlsBtn);
+
+                // Collapsible functionality
+                let controlsVisible = true;
+                const contentElements = Array.from(mobileControlsContainer.children).filter(el => el !== toggleControlsBtn);
+
+                toggleControlsBtn.addEventListener('click', () => {
+                    controlsVisible = !controlsVisible;
+                    contentElements.forEach(el => {
+                        el.style.display = controlsVisible ? 'flex' : 'none';
+                    });
+                    toggleControlsBtn.textContent = controlsVisible ? '▼' : '▲';
+                    mobileControlsContainer.style.padding = controlsVisible ? '10px' : '5px';
+                });
+
+                // Helper functions for creating controls
+                function createControlGroup(labelText) {
+                    const group = document.createElement('div');
+                    group.style.display = 'flex';
+                    group.style.flexDirection = 'column';
+                    group.style.alignItems = 'center';
+                    group.style.margin = '5px';
+
+                    const label = document.createElement('div');
+                    label.textContent = labelText;
+                    label.style.color = 'white';
+                    label.style.fontSize = '10px';
+                    label.style.marginBottom = '5px';
+                    label.style.fontFamily = "'Press Start 2P', cursive";
+
+                    const controls = document.createElement('div');
+                    controls.style.display = 'flex';
+                    controls.style.gap = '5px';
+
+                    group.appendChild(label);
+                    group.appendChild(controls);
+
+                    return controls;
+                }
+
+                function createControlButton(text, tooltip) {
+                    const button = document.createElement('button');
+                    button.textContent = text;
+                    button.title = tooltip;
+                    button.style.width = '40px';
+                    button.style.height = '40px';
+                    button.style.borderRadius = '5px';
+                    button.style.border = 'none';
+                    button.style.backgroundColor = '#616161';
+                    button.style.color = 'white';
+                    button.style.cursor = 'pointer';
+                    button.style.fontFamily = "'Press Start 2P', cursive";
+                    button.style.fontSize = '12px';
+                    button.style.display = 'flex';
+                    button.style.justifyContent = 'center';
+                    button.style.alignItems = 'center';
+
+                    return button;
+                }
+
+                document.body.appendChild(mobileControlsContainer);
+            }
+
             // Update existing functions to work with recording
             const originalPlaySound = playSound;
             playSound = function(note, velocity) {
@@ -1241,28 +1506,135 @@ function initAudioContext() {
             updateNotes();
             updateInstrumentText();
             createControlButtons();
+            createMobileControls();
+
+            // Set up a global touch tracking system
+            const touchedKeyMap = new Map(); // Maps touch identifier to currently touched key element
+
+            // Improve the touch event handlers
+            piano.addEventListener('touchstart', (event) => {
+                event.preventDefault();
+
+                // Handle each new touch
+                Array.from(event.changedTouches).forEach(touch => {
+                    // Find what key is under this touch point
+                    const target = document.elementFromPoint(touch.clientX, touch.clientY);
+
+                    // Only process if it's a key
+                    if (target && target.classList.contains('key')) {
+                        const actualNote = target.dataset.note;
+
+                        const touchVelocity = 1; // Use consistent velocity for mobile
+                        // // Calculate touch velocity based on vertical position
+                        // // (higher on the key = louder)
+                        // const rect = target.getBoundingClientRect();
+                        // const touchY = touch.clientY - rect.top;
+                        // const touchVelocity = Math.min(1, Math.max(0.2, 1 - (touchY / rect.height)));
+
+                        // Store which key this touch ID is currently pressing
+                        touchedKeyMap.set(touch.identifier, {
+                            element: target,
+                            note: actualNote
+                        });
+
+                        // Play the note
+                        playSound(actualNote, touchVelocity);
+                        target.classList.add('active');
+                    }
+                });
+            });
+
+            piano.addEventListener('touchmove', (event) => {
+                event.preventDefault();
+
+                // Process each moving touch
+                Array.from(event.changedTouches).forEach(touch => {
+                    // Find the key data for this touch ID
+                    const touchData = touchedKeyMap.get(touch.identifier);
+                    if (!touchData) return;
+
+                    const currentKey = touchData.element;
+                    const currentNote = touchData.note;
+
+                    // Find what key is now under the touch point
+                    const target = document.elementFromPoint(touch.clientX, touch.clientY);
+
+                    // If we've moved off a key
+                    if (!target || !target.classList.contains('key')) {
+                        // Release the note
+                        currentKey.classList.remove('active');
+                        stopSound(currentNote);
+                    }
+                    // If we've moved to a different key
+                    else if (target !== currentKey) {
+                    // if (target !== currentKey) {
+
+                        // Release the previous key
+                        currentKey.classList.remove('active');
+                        stopSound(currentNote);
+
+                        // Play the new key
+                        const newNote = target.dataset.note;
+                        target.classList.add('active');
+                        playSound(newNote, 0.8);
+
+                        // Update our touch tracking map
+                        touchedKeyMap.set(touch.identifier, {
+                            element: target,
+                            note: newNote
+                        });
+                    }
+                });
+            });
+
+            piano.addEventListener('touchend', (event) => {
+                event.preventDefault();
+
+                // Process each ending touch
+                Array.from(event.changedTouches).forEach(touch => {
+                    // Find which key this touch was pressing
+                    const touchData = touchedKeyMap.get(touch.identifier);
+
+                    // Only process if we have a record of this touch
+                    if (touchData) {
+                        const currentKey = touchData.element;
+                        const currentNote = touchData.note;
+
+                        // Release the note
+                        currentKey.classList.remove('active');
+                        stopSound(currentNote);
+
+                        // Remove from our tracking map
+                        touchedKeyMap.delete(touch.identifier);
+                    }
+                });
+            });
+
+            piano.addEventListener('touchcancel', (event) => {
+                event.preventDefault();
+
+                // Process each cancelled touch
+                Array.from(event.changedTouches).forEach(touch => {
+                    // Find which key this touch was pressing
+                    const touchData = touchedKeyMap.get(touch.identifier);
+
+                    // Only process if we have a record of this touch
+                    if (touchData) {
+                        const currentKey = touchData.element;
+                        const currentNote = touchData.note;
+
+                        // Release the note
+                        currentKey.classList.remove('active');
+                        stopSound(currentNote);
+
+                        // Remove from our tracking map
+                        touchedKeyMap.delete(touch.identifier);
+                    }
+                });
+            });
 
             keys.forEach(key => {
                 const keyboardKey = key.dataset.key;
-
-                // Add touch support for mobile
-                key.addEventListener('touchstart', (event) => {
-                    event.preventDefault(); // Prevent scrolling when touching keys
-                    const rect = key.getBoundingClientRect();
-                    const touch = event.touches[0];
-                    const touchX = touch.clientX - rect.left;
-                    velocity = Math.min(1, Math.max(0.1, touchX / rect.width));
-                    const actualNote = key.dataset.note;
-                    playSound(actualNote, velocity);
-                    key.classList.add('active');
-                });
-
-                key.addEventListener('touchend', (event) => {
-                    event.preventDefault();
-                    const actualNote = key.dataset.note;
-                    key.classList.remove('active');
-                    stopSound(actualNote);
-                });
 
                 key.addEventListener('mousedown', (event) => {
                     const rect = key.getBoundingClientRect();
@@ -1302,20 +1674,6 @@ function initAudioContext() {
                     }
                 }
             }
-
-            // function playSound(note, velocity) {
-            //     if (!pressedKeys.has(note)) {
-            //         currentSynth = synths[1];
-            //         try {
-            //             currentSynth.triggerAttack(note, undefined, velocity);
-            //         } catch (error) {
-            //             console.error("Error triggering attack:", error);
-            //             return;
-            //         }
-            //         pressedKeys.add(note);
-            //         activeKeys.set(note, currentSynth);
-            //     }
-            // }
 
             function stopSound(note) {
                 const synthInstance = activeKeys.get(note);
@@ -1423,7 +1781,7 @@ function initAudioContext() {
                 activeKeys.clear();
                 keys.forEach(key => key.classList.remove('active'));
             }
-        });
+        }
 
         document.addEventListener('DOMContentLoaded', function() {
             const toggleButton = document.getElementById('toggleInstructions');
@@ -1440,6 +1798,8 @@ function initAudioContext() {
             instructionsContent.classList.add('hidden');
             instructionsContainer.classList.add('collapsed');
             toggleButton.textContent = '?';
+            // also hide toggle button, it will be reveal after piano is loaded
+            toggleButton.style.display = 'none';
         });
 
 
