@@ -276,6 +276,7 @@
                 <ul>
                     <li><span class="key-icon">●</span> Start/stop recording</li>
                     <li><span class="key-icon">▶</span> Play/stop recorded music</li>
+                    <li><span class="key-icon">♫</span> Playback in orignal (default) / current scale</li>
                     <li><span class="key-icon">↓</span> Save recording to file</li>
                     <li><span class="key-icon">↑</span> Load recording from file</li>
                 </ul>
@@ -311,7 +312,7 @@
         function initAudioContext() {
             const audioMessage = document.createElement('div');
             audioMessage.id = 'audio-message';
-            audioMessage.textContent = 'Tap to enable sound';
+            audioMessage.textContent = 'Tap to enable sound (Remember to turn off silent mode). Click ? for instructions.';
             audioMessage.style.position = 'fixed';
             audioMessage.style.top = '0';
             audioMessage.style.left = '0';
