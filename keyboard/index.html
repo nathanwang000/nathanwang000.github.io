@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scale-Based Keyboard</title>
+    <link rel="icon"
+          href="/static/favicon.ico"
+          type="image/png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/tone"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: 'Press Start 2P', cursive;
+            margin: 0;
+            /* put instruction on top */
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .piano {
+            display: flex;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #121212;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            user-select: none;
+            position: relative;
+        }
+
+        .key {
+            width: 40px;
+            height: 150px;
+            margin: 2px;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+            transition: background-color 0.1s ease;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 5px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .key.black {
+            background-color: #000;
+            color: #fff;
+            width: 24px;
+            height: 100px;
+            margin-left: -12px;
+            margin-right: -12px;
+            z-index: 1;
+            align-items: flex-start;
+            padding-bottom: 0;
+            padding-top: 5px;
+        }
+
+        .key.active {
+            background-color: #ddd;
+        }
+
+        .key.black.active {
+            background-color: #333;
+        }
+
+        .key-label {
+            font-size: 0.7em;
+            color: #555;
+        }
+
+        .key.black .key-label {
+            color: #eee;
+        }
+
+        @media (max-width: 768px) {
+            .piano {
+                transform: scale(0.8);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .piano {
+                transform: scale(0.6);
+            }
+        }
+
+        .instrument-text {
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 0.8em;
+            pointer-events: none;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
+            z-index: 2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 400px;
+        }
+
+        /* instruction */
+        .instructions {
+            position: relative;
+            background-color: #121212;
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7em;
+            margin-bottom: 20px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .instructions-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .instructions-header h3 {
+            margin: 0;
+            color: #4CAF50;
+            font-size: 1.1em;
+        }
+
+        .instructions ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .instructions li {
+            margin: 10px 0;
+        }
+
+        .scale-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        .scale-list li {
+            margin: 2px 0;
+        }
+
+        .key-icon {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 2px 5px;
+            border-radius: 4px;
+            margin-right: 5px;
+            font-size: 0.9em;
+        }
+
+        .toggle-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(51, 51, 51, 0.7);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            line-height: 1;
+            z-index: 10;
+        }
+
+        .toggle-button:hover {
+            background-color: rgba(68, 68, 68, 0.9);
+        }
+
+        .instructions-content {
+            max-height: 1000px;
+            overflow: hidden;
+        }
+
+        .instructions-content.hidden {
+            max-height: 0;
+        }
+
+        .instructions.collapsed {
+            background-color: transparent;
+            box-shadow: none;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .instructions.collapsed .instructions-header {
+            display: none;
+        }
+
+</style>
+</head>
+<body>
+
+    <div class="instructions" id="instructionsContainer">
+        <div class="instructions-header">
+            <h3>Keyboard Controls</h3>
+        </div>
+        <button id="toggleInstructions" class="toggle-button">×</button>
+        <div id="instructionsContent" class="instructions-content">
+        <ul>
+            <li><span class="key-icon">↑</span><span class="key-icon">↓</span> Change octave</li>
+            <li><span class="key-icon">Shift</span> Reduce volume</li>
+            <li><span class="key-icon">←</span><span class="key-icon">→</span> Change root note</li>
+            <li><span class="key-icon">1</span>-<span class="key-icon">9</span> Change scale mode:
+                <ul class="scale-list">
+                    <li><span class="key-icon">1</span> Major</li>
+                    <li><span class="key-icon">2</span> Dorian</li>
+                    <li><span class="key-icon">3</span> Phrygian</li>
+                    <li><span class="key-icon">4</span> Lydian</li>
+                    <li><span class="key-icon">5</span> Mixolydian</li>
+                    <li><span class="key-icon">6</span> Locrian</li>
+                    <li><span class="key-icon">7</span> Harmonic Minor</li>
+                    <li><span class="key-icon">8</span> Japanese</li>
+                    <li><span class="key-icon">9</span> Blues</li>
+                </ul>
+            </li>
+            <li>Type to play notes (A-L, W-P keys)</li>
+            <li>Recording:
+                <ul>
+                    <li><span class="key-icon">●</span> Start/stop recording</li>
+                    <li><span class="key-icon">▶</span> Play/stop recorded music</li>
+                    <li><span class="key-icon">↓</span> Save recording to file</li>
+                    <li><span class="key-icon">↑</span> Load recording from file</li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+    </div>
+
+    <div class="piano">
+        <div class="instrument-text">Scale: Major</div>
+        <div class="key" data-note="C4" data-key="a"><span class="key-label">A</span></div>
+        <div class="key black" data-note="C#4" data-key="w"><span class="key-label">W</span></div>
+        <div class="key" data-note="D4" data-key="s"><span class="key-label">S</span></div>
+        <div class="key black" data-note="D#4" data-key="e"><span class="key-label">E</span></div>
+        <div class="key" data-note="E4" data-key="d"><span class="key-label">D</span></div>
+        <div class="key" data-note="F4" data-key="f"><span class="key-label">F</span></div>
+        <div class="key black" data-note="F#4" data-key="t"><span class="key-label">T</span></div>
+        <div class="key" data-note="G4" data-key="g"><span class="key-label">G</span></div>
+        <div class="key black" data-note="G#4" data-key="y"><span class="key-label">Y</span></div>
+        <div class="key" data-note="A4" data-key="h"><span class="key-label">H</span></div>
+        <div class="key black" data-note="A#4" data-key="u"><span class="key-label">U</span></div>
+        <div class="key" data-note="B4" data-key="j"><span class="key-label">J</span></div>
+        <div class="key" data-note="C5" data-key="k"><span class="key-label">K</span></div>
+        <div class="key black" data-note="C#5" data-key="o"><span class="key-label">O</span></div>
+        <div class="key" data-note="D5" data-key="l"><span class="key-label">L</span></div>
+        <div class="key black" data-note="D#5" data-key="p"><span class="key-label">P</span></div>
+        <div class="key" data-note="E5" data-key=";"><span class="key-label">;</span></div>
+    </div>
+
+    <script>
+
+        // Create audio context initialization for mobile
+function initAudioContext() {
+    const audioMessage = document.createElement('div');
+    audioMessage.id = 'audio-message';
+    audioMessage.textContent = 'Tap to enable sound';
+    audioMessage.style.position = 'fixed';
+    audioMessage.style.top = '0';
+    audioMessage.style.left = '0';
+    audioMessage.style.width = '100%';
+    audioMessage.style.padding = '10px';
+    audioMessage.style.backgroundColor = '#4CAF50';
+    audioMessage.style.color = 'white';
+    audioMessage.style.textAlign = 'center';
+    audioMessage.style.zIndex = '1000';
+    audioMessage.style.boxShadow = '0 2px 4px rgba(0,0,0,0.3)'; // Add shadow for visibility
+    audioMessage.style.fontWeight = 'bold'; // Make text more visible
+    document.body.appendChild(audioMessage);
+
+    async function startAudio() {
+        if (Tone.context.state !== 'running') {
+            await Tone.start(); // This is a more complete way to initialize Tone.js
+            console.log('Audio context started');
+            document.body.removeChild(audioMessage);
+        } else {
+            if (document.body.contains(audioMessage)) {
+                document.body.removeChild(audioMessage);
+            }
+        }
+        document.removeEventListener('touchstart', startAudio);
+        document.removeEventListener('mousedown', startAudio);
+        document.removeEventListener('keydown', startAudio);
+    }
+
+    document.addEventListener('touchstart', startAudio);
+    document.addEventListener('mousedown', startAudio);
+    document.addEventListener('keydown', startAudio);
+}
+
+        // Call the function to set up audio context initialization
+        initAudioContext();
+
+        window.addEventListener('load', () => {
+            const piano = document.querySelector('.piano');
+            const keys = document.querySelectorAll('.key');
+            const pressedKeys = new Set();
+            let octave = 4;
+            let activeKeys = new Map();
+            let velocity = 0.8;
+            let currentScale = 1;
+            let rootNote = 'C';
+            let instrumentText = document.querySelector('.instrument-text');
+            const synths = {
+                1: new Tone.PolySynth(Tone.Synth).toDestination(),
+            };
+            let currentSynth = synths[1];
+
+            const scales = {
+                1: { name: "Major", intervals: [0, 2, 4, 5, 7, 9, 11] },
+                2: { name: "Dorian", intervals: [0, 2, 3, 5, 7, 9, 10] },
+                3: { name: "Phrygian", intervals: [0, 1, 3, 5, 7, 8, 10] },
+                4: { name: "Lydian", intervals: [0, 2, 4, 6, 7, 9, 11] },
+                5: { name: "Mixolydian", intervals: [0, 2, 4, 5, 7, 9, 10] },
+                6: { name: "Locrian", intervals: [0, 1, 3, 5, 6, 8, 10] },
+                7: { name: "Harmonic Minor", intervals: [0, 2, 3, 5, 7, 8, 11] },
+                8: { name: "Japanese", intervals: [0, 2, 3, 7, 8] },
+                9: { name: "Blues", intervals: [0, 2, 3, 4, 5, 7, 10] }
+            };
+
+            const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+            const keyMap = {
+                'a': 0, 'w': 1, 's': 2, 'e': 3, 'd': 4,
+                'f': 5, 't': 6, 'g': 7, 'y': 8, 'h': 9,
+                'u': 10, 'j': 11, 'k': 12, 'o': 13, 'l': 14,
+                'p': 15, ';': 16
+            };
+
+            const whiteKeys = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';'];
+            const blackKeys = ['w', 'e', 't', 'y', 'u', 'o', 'p'];
+
+            function getNoteFromInterval(rootNote, interval, octave) {
+                const rootNoteIndex = notes.indexOf(rootNote);
+                if (rootNoteIndex === -1) {
+                    console.error("Invalid root note:", rootNote);
+                    return '';
+                }
+                let noteIndex = (rootNoteIndex + interval) % 12;
+                if (noteIndex < 0) {
+                    noteIndex += 12;
+                }
+                let newOctave = octave + Math.floor((rootNoteIndex + interval) / 12);
+                return { noteName: notes[noteIndex], octave: newOctave };
+            }
+
+            function updateNotes() {
+                const scale = scales[currentScale];
+                const rootNoteIndex = notes.indexOf(rootNote);
+                const currentOctave = parseInt(octave);
+
+                const scaleNotes = scale.intervals.map(interval => {
+                    const noteInfo = getNoteFromInterval(rootNote, interval, currentOctave);
+                    return noteInfo.noteName + noteInfo.octave;
+                });
+
+                const whiteKeyOrder = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';'];
+                const blackKeyOrder = ['w', 'e', 't', 'y', 'u', 'o', 'p'];
+                const blackKeyOffsets = [1, 3, 6, 8, 10, 13, 15];
+
+                whiteKeyOrder.forEach((keyDataKey, index) => {
+                    const keyElement = document.querySelector(`[data-key="${keyDataKey}"]`);
+                    if (keyElement) {
+                        const scaleIndex = index % scaleNotes.length;
+                        const octaveOffset = Math.floor(index / scaleNotes.length);
+                        const baseNote = scaleNotes[scaleIndex].slice(0, -1);
+                        const baseOctave = parseInt(scaleNotes[scaleIndex].slice(-1));
+                        keyElement.dataset.note = baseNote + (baseOctave + octaveOffset);
+                    }
+                });
+
+                blackKeyOrder.forEach((keyDataKey, index) => {
+                    const keyElement = document.querySelector(`[data-key="${keyDataKey}"]`);
+                    if (keyElement && index < blackKeyOffsets.length) {
+                        const noteInfo = getNoteFromInterval(rootNote, blackKeyOffsets[index], currentOctave);
+                        keyElement.dataset.note = noteInfo.noteName + noteInfo.octave;
+                    }
+                });
+
+                updateKeyColors();
+            }
+
+            function updateKeyColors() {
+                const scale = scales[currentScale];
+                keys.forEach(key => {
+                    const note = key.dataset.note;
+                    const noteName = note.slice(0, -1);
+                    const isScaleNote = scale.intervals.some(interval => {
+                        const calculatedNoteInfo = getNoteFromInterval(rootNote, interval, parseInt(octave));
+                        return calculatedNoteInfo.noteName === noteName;
+                    });
+
+                    if (whiteKeys.includes(key.dataset.key)) {
+                        if (!isScaleNote) {
+                            console.warn("White key playing a non-scale note:", note);
+                            key.classList.add('black'); // Indicate error visually
+                        } else {
+                            key.classList.remove('black');
+                        }
+                    } else if (blackKeys.includes(key.dataset.key)) {
+                        const baseNoteIndex = notes.indexOf(noteName);
+                        const isSharpOrFlat = baseNoteIndex !== -1 && notes[baseNoteIndex].includes('#');
+                        if (!isSharpOrFlat && isScaleNote) {
+                            key.classList.remove('black'); // Allow black keys to be part of the scale (e.g., F# in G Major)
+                        } else if (isSharpOrFlat) {
+                            key.classList.add('black');
+                        } else if (!isScaleNote) {
+                            key.classList.add('black');
+                        }
+                    }
+                });
+            }
+
+            function updateInstrumentText() {
+                instrumentText.textContent = `Scale: ${scales[currentScale].name}, Root: ${rootNote}${octave}`;
+            }
+
+            // Save load functionalities start
+            // Add recording functionality
+            let isRecording = false;
+            let recordedNotes = [];
+            let recordingStartTime = 0;
+            let recordingTimer = null;
+            let isPlaying = false;
+            let playbackTimer = null;
+
+            function startRecording() {
+                if (isRecording) return;
+                isRecording = true;
+                recordedNotes = [];
+                recordingStartTime = Date.now();
+                updateRecordButton();
+
+                // Show recording indicator
+                const recordingIndicator = document.createElement('div');
+                recordingIndicator.id = 'recording-indicator';
+                recordingIndicator.textContent = 'Recording...';
+                recordingIndicator.style.position = 'absolute';
+                recordingIndicator.style.bottom = '10px';
+                recordingIndicator.style.left = '50%';
+                recordingIndicator.style.transform = 'translateX(-50%)';
+                recordingIndicator.style.color = 'red';
+                recordingIndicator.style.fontWeight = 'bold';
+                recordingIndicator.style.padding = '5px 10px';
+                recordingIndicator.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+                recordingIndicator.style.borderRadius = '5px';
+                recordingIndicator.style.zIndex = '3';
+                piano.appendChild(recordingIndicator);
+            }
+
+            function stopRecording() {
+                if (!isRecording) return;
+                isRecording = false;
+                updateRecordButton();
+
+                // Remove recording indicator
+                const recordingIndicator = document.getElementById('recording-indicator');
+                if (recordingIndicator) recordingIndicator.remove();
+
+                // Show save dialog if we have recorded notes
+                if (recordedNotes.length > 0) {
+                    showSaveDialog();
+                }
+            }
+
+            // function recordNote(note, velocity, isNoteOn) {
+            //     if (!isRecording) return;
+            //     const timestamp = Date.now() - recordingStartTime;
+            //     recordedNotes.push({
+            //         note,
+            //         velocity,
+            //         timestamp,
+            //         isNoteOn
+            //     });
+            // }
+
+            // Update the recordNote function to store relative scale information
+            function recordNote(note, velocity, isNoteOn) {
+                if (!isRecording) return;
+                const timestamp = Date.now() - recordingStartTime;
+
+                // Extract the note name and octave
+                const noteName = note.slice(0, -1);  // e.g., "C" from "C4"
+                const noteOctave = parseInt(note.slice(-1));
+
+                // Find the current scale and root note at this point in time
+                const currentScaleInfo = {
+                    scale: currentScale,
+                    scaleName: scales[currentScale].name,
+                    rootNote: rootNote,
+                    octave: noteOctave
+                };
+
+                // Calculate relative position in the scale
+                const rootIndex = notes.indexOf(rootNote);
+                const noteIndex = notes.indexOf(noteName);
+
+                // Calculate the relative position considering octaves
+                const absoluteSemitones = (noteOctave - octave) * 12 + ((noteIndex - rootIndex + 12) % 12);
+
+                // Find degree in the scale (1-based index in the scale)
+                const scaleIntervals = scales[currentScale].intervals;
+                let scaleDegree = -1;
+                let closestScaleTone = -1;
+
+                for (let i = 0; i < scaleIntervals.length; i++) {
+                    if (scaleIntervals[i] === (noteIndex - rootIndex + 12) % 12) {
+                        scaleDegree = i + 1; // 1-based index
+                        break;
+                    }
+
+                    // Find closest scale tone if not exact match
+                    if (closestScaleTone === -1 ||
+                        Math.abs(scaleIntervals[i] - (noteIndex - rootIndex + 12) % 12) <
+                        Math.abs(scaleIntervals[closestScaleTone] - (noteIndex - rootIndex + 12) % 12)) {
+                        closestScaleTone = i;
+                    }
+                }
+
+                recordedNotes.push({
+                    note, // Keep the actual note for backward compatibility
+                    velocity,
+                    timestamp,
+                    isNoteOn,
+                    scaleInfo: currentScaleInfo,
+                    relativeInfo: {
+                        rootNote: rootNote,
+                        absoluteSemitones: absoluteSemitones,
+                        scaleDegree: scaleDegree,
+                        isScaleTone: scaleDegree !== -1
+                    }
+                });
+            }
+
+
+            // function playRecording() {
+            //     if (isPlaying || recordedNotes.length === 0) return;
+            //     isPlaying = true;
+            //     updatePlayButton();
+
+            //     let currentIndex = 0;
+            //     const startTime = Date.now();
+
+            //     playbackTimer = setInterval(() => {
+            //         const currentTime = Date.now() - startTime;
+
+            //         while (currentIndex < recordedNotes.length && recordedNotes[currentIndex].timestamp <= currentTime) {
+            //             const noteEvent = recordedNotes[currentIndex];
+            //             if (noteEvent.isNoteOn) {
+            //                 playSound(noteEvent.note, noteEvent.velocity);
+
+            //                 // Highlight the key
+            //                 const keyElement = findKeyByNote(noteEvent.note);
+            //                 if (keyElement) keyElement.classList.add('active');
+            //             } else {
+            //                 stopSound(noteEvent.note);
+
+            //                 // Remove highlight
+            //                 const keyElement = findKeyByNote(noteEvent.note);
+            //                 if (keyElement) keyElement.classList.remove('active');
+            //             }
+
+            //             currentIndex++;
+            //         }
+
+            //         if (currentIndex >= recordedNotes.length) {
+            //             stopPlayback();
+            //         }
+            //     }, 10);
+            // }
+
+            function playRecording(useOriginalScale = false) {
+                if (isPlaying || recordedNotes.length === 0) return;
+                isPlaying = true;
+                updatePlayButton();
+
+                let currentIndex = 0;
+                const startTime = Date.now();
+
+                // Store the original scale and root note to restore later if needed
+                const originalUIScale = currentScale;
+                const originalUIRoot = rootNote;
+                const originalUIOctave = octave;
+
+                // Only track scale changes if we're using the original scale
+                const scaleChangePoints = [];
+                if (useOriginalScale) {
+                    let lastScale = null;
+                    recordedNotes.forEach((note, index) => {
+                        if (note.scaleInfo && (!lastScale ||
+                            lastScale.scale !== note.scaleInfo.scale ||
+                            lastScale.rootNote !== note.scaleInfo.rootNote ||
+                            lastScale.octave !== note.scaleInfo.octave)) {
+
+                            scaleChangePoints.push({
+                                index: index,
+                                timestamp: note.timestamp,
+                                scaleInfo: note.scaleInfo
+                            });
+                            lastScale = note.scaleInfo;
+                        }
+                    });
+                }
+
+                playbackTimer = setInterval(() => {
+                    const currentTime = Date.now() - startTime;
+
+                    // Only apply scale changes if we're using the original scale
+                    if (useOriginalScale) {
+                        for (const changePoint of scaleChangePoints) {
+                            if (changePoint.timestamp <= currentTime && !changePoint.applied) {
+                                // Update the UI scale
+                                currentScale = changePoint.scaleInfo.scale;
+                                rootNote = changePoint.scaleInfo.rootNote;
+                                octave = changePoint.scaleInfo.octave;
+                                updateNotes();
+                                updateInstrumentText();
+                                changePoint.applied = true;
+                            }
+                        }
+                    }
+
+                    while (currentIndex < recordedNotes.length && recordedNotes[currentIndex].timestamp <= currentTime) {
+                        const noteEvent = recordedNotes[currentIndex];
+
+                        // Determine which note to play
+                        let noteToPlay = noteEvent.note;
+
+                        // If we're not using the original scale, calculate the note based on relative position
+                        if (!useOriginalScale && noteEvent.relativeInfo) {
+                            const relativeInfo = noteEvent.relativeInfo;
+
+                            if (relativeInfo.scaleDegree !== -1) {
+                                // It's a scale tone - use the corresponding degree in the current scale
+                                const currentScaleIntervals = scales[currentScale].intervals;
+                                const degreeIndex = (relativeInfo.scaleDegree - 1) % currentScaleIntervals.length;
+                                const interval = currentScaleIntervals[degreeIndex];
+
+                                // Calculate octave offset
+                                const octaveOffset = Math.floor((relativeInfo.scaleDegree - 1) / currentScaleIntervals.length);
+
+                                // Get the new note
+                                const noteInfo = getNoteFromInterval(rootNote, interval, octave + octaveOffset);
+                                noteToPlay = noteInfo.noteName + noteInfo.octave;
+                            } else {
+                                // It's not a scale tone - use absolute semitones from root
+                                const rootIndex = notes.indexOf(rootNote);
+                                const absoluteIndex = (rootIndex + relativeInfo.absoluteSemitones) % 12;
+                                const absoluteOctave = octave + Math.floor((rootIndex + relativeInfo.absoluteSemitones) / 12);
+                                noteToPlay = notes[absoluteIndex] + absoluteOctave;
+                            }
+                        }
+
+                        if (noteEvent.isNoteOn) {
+                            playSound(noteToPlay, noteEvent.velocity);
+
+                            // Highlight the key
+                            const keyElement = findKeyByNote(noteToPlay);
+                            if (keyElement) keyElement.classList.add('active');
+                        } else {
+                            stopSound(noteToPlay);
+
+                            // Remove highlight
+                            const keyElement = findKeyByNote(noteToPlay);
+                            if (keyElement) keyElement.classList.remove('active');
+                        }
+
+                        currentIndex++;
+                    }
+
+                    if (currentIndex >= recordedNotes.length) {
+                        stopPlayback();
+
+                        // If we were using the original scale, restore the UI to what it was
+                        if (useOriginalScale) {
+                            setTimeout(() => {
+                                currentScale = originalUIScale;
+                                rootNote = originalUIRoot;
+                                updateNotes();
+                                updateInstrumentText();
+                            }, 500); // Small delay to let final notes finish
+                        }
+                    }
+                }, 10);
+            }
+
+            function stopPlayback() {
+                if (!isPlaying) return;
+                clearInterval(playbackTimer);
+                isPlaying = false;
+                updatePlayButton();
+
+                // Release all keys that might still be pressed
+                releaseAllKeys();
+            }
+
+            function findKeyByNote(noteName) {
+                let foundKey = null;
+                keys.forEach(key => {
+                    if (key.dataset.note === noteName) {
+                        foundKey = key;
+                    }
+                });
+                return foundKey;
+            }
+
+            function updateRecordButton() {
+                const recordButton = document.getElementById('record-button');
+                if (recordButton) {
+                    recordButton.textContent = isRecording ? '■' : '●';
+                    recordButton.style.backgroundColor = isRecording ? '#ff5252' : '#616161';
+                }
+            }
+
+            function updatePlayButton() {
+                const playButton = document.getElementById('play-button');
+                if (playButton) {
+                    playButton.textContent = isPlaying ? '■' : '▶';
+                    playButton.style.backgroundColor = isPlaying ? '#ff9800' : '#616161';
+                }
+            }
+
+            function showSaveDialog() {
+                // Create modal dialog
+                const modal = document.createElement('div');
+                modal.style.position = 'fixed';
+                modal.style.top = '0';
+                modal.style.left = '0';
+                modal.style.width = '100%';
+                modal.style.height = '100%';
+                modal.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+                modal.style.display = 'flex';
+                modal.style.justifyContent = 'center';
+                modal.style.alignItems = 'center';
+                modal.style.zIndex = '1000';
+
+                // Create dialog content
+                const dialog = document.createElement('div');
+                dialog.style.backgroundColor = '#121212';
+                dialog.style.padding = '20px';
+                dialog.style.borderRadius = '10px';
+                dialog.style.width = '80%';
+                dialog.style.maxWidth = '400px';
+                dialog.style.fontFamily = "'Press Start 2P', cursive";
+                dialog.style.color = 'white';
+
+                // Title
+                const title = document.createElement('h3');
+                title.textContent = 'Save Recording';
+                title.style.marginTop = '0';
+                title.style.color = '#4CAF50';
+
+                // File name input
+                const fileNameLabel = document.createElement('label');
+                fileNameLabel.textContent = 'Recording Name:';
+                fileNameLabel.style.display = 'block';
+                fileNameLabel.style.marginBottom = '5px';
+
+                const fileNameInput = document.createElement('input');
+                fileNameInput.type = 'text';
+                fileNameInput.value = `Piano_Recording_${new Date().toISOString().slice(0,10)}`;
+                fileNameInput.style.width = '100%';
+                fileNameInput.style.padding = '8px';
+                fileNameInput.style.marginBottom = '15px';
+                fileNameInput.style.backgroundColor = '#333';
+                fileNameInput.style.border = 'none';
+                fileNameInput.style.borderRadius = '4px';
+                fileNameInput.style.color = 'white';
+                fileNameInput.style.fontFamily = "'Press Start 2P', cursive";
+                fileNameInput.style.fontSize = '0.8em';
+
+                // Format selection
+                const formatLabel = document.createElement('label');
+                formatLabel.textContent = 'Format:';
+                formatLabel.style.display = 'block';
+                formatLabel.style.marginBottom = '5px';
+
+                const formatSelect = document.createElement('select');
+                formatSelect.style.width = '100%';
+                formatSelect.style.padding = '8px';
+                formatSelect.style.marginBottom = '20px';
+                formatSelect.style.backgroundColor = '#333';
+                formatSelect.style.border = 'none';
+                formatSelect.style.borderRadius = '4px';
+                formatSelect.style.color = 'white';
+                formatSelect.style.fontFamily = "'Press Start 2P', cursive";
+                formatSelect.style.fontSize = '0.8em';
+
+                const formatOptions = ['JSON', 'MIDI-like (JSON)'];
+                formatOptions.forEach(format => {
+                    const option = document.createElement('option');
+                    option.value = format;
+                    option.textContent = format;
+                    formatSelect.appendChild(option);
+                });
+
+                // Buttons
+                const buttonContainer = document.createElement('div');
+                buttonContainer.style.display = 'flex';
+                buttonContainer.style.justifyContent = 'space-between';
+
+                const cancelButton = document.createElement('button');
+                cancelButton.textContent = 'Cancel';
+                cancelButton.style.padding = '8px 15px';
+                cancelButton.style.backgroundColor = '#616161';
+                cancelButton.style.border = 'none';
+                cancelButton.style.borderRadius = '4px';
+                cancelButton.style.color = 'white';
+                cancelButton.style.cursor = 'pointer';
+                cancelButton.style.fontFamily = "'Press Start 2P', cursive";
+                cancelButton.style.fontSize = '0.8em';
+
+                const saveButton = document.createElement('button');
+                saveButton.textContent = 'Save';
+                saveButton.style.padding = '8px 15px';
+                saveButton.style.backgroundColor = '#4CAF50';
+                saveButton.style.border = 'none';
+                saveButton.style.borderRadius = '4px';
+                saveButton.style.color = 'white';
+                saveButton.style.cursor = 'pointer';
+                saveButton.style.fontFamily = "'Press Start 2P', cursive";
+                saveButton.style.fontSize = '0.8em';
+
+                // Append elements
+                buttonContainer.appendChild(cancelButton);
+                buttonContainer.appendChild(saveButton);
+
+                dialog.appendChild(title);
+                dialog.appendChild(fileNameLabel);
+                dialog.appendChild(fileNameInput);
+                dialog.appendChild(formatLabel);
+                dialog.appendChild(formatSelect);
+                dialog.appendChild(buttonContainer);
+
+                modal.appendChild(dialog);
+                document.body.appendChild(modal);
+
+                // Button events
+                cancelButton.addEventListener('click', () => {
+                    document.body.removeChild(modal);
+                });
+
+                saveButton.addEventListener('click', () => {
+                    const fileName = fileNameInput.value || 'Piano_Recording';
+                    const format = formatSelect.value;
+                    saveRecording(fileName, format);
+                    document.body.removeChild(modal);
+                });
+            }
+
+            function saveRecording(fileName, format) {
+                let dataToSave;
+                let fileExtension;
+
+                if (format === 'JSON') {
+                    // Basic JSON format with recording metadata
+                    dataToSave = {
+                        name: fileName,
+                        date: new Date().toISOString(),
+                        scale: scales[currentScale].name,
+                        rootNote: rootNote,
+                        notes: recordedNotes
+                    };
+                    fileExtension = 'json';
+                } else {
+                    // MIDI-like format
+                    dataToSave = {
+                        name: fileName,
+                        date: new Date().toISOString(),
+                        format: 'MIDI-like',
+                        scale: scales[currentScale].name,
+                        rootNote: rootNote,
+                        tracks: [
+                            {
+                                instrument: 'piano',
+                                events: recordedNotes.map(note => ({
+                                    type: note.isNoteOn ? 'noteOn' : 'noteOff',
+                                    note: note.note,
+                                    velocity: note.velocity,
+                                    time: note.timestamp
+                                }))
+                            }
+                        ]
+                    };
+                    fileExtension = 'pkeys';
+                }
+
+                const jsonString = JSON.stringify(dataToSave, null, 2);
+                const blob = new Blob([jsonString], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+
+                // Create download link
+                const downloadLink = document.createElement('a');
+                downloadLink.href = url;
+                downloadLink.download = `${fileName}.${fileExtension}`;
+
+                // Trigger download and cleanup
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+                URL.revokeObjectURL(url);
+
+                // Show notification
+                const notification = document.createElement('div');
+                notification.textContent = 'Recording saved!';
+                notification.style.position = 'fixed';
+                notification.style.bottom = '20px';
+                notification.style.right = '20px';
+                notification.style.backgroundColor = '#4CAF50';
+                notification.style.color = 'white';
+                notification.style.padding = '10px 20px';
+                notification.style.borderRadius = '5px';
+                notification.style.fontFamily = "'Press Start 2P', cursive";
+                notification.style.fontSize = '0.8em';
+                notification.style.zIndex = '1001';
+
+                document.body.appendChild(notification);
+
+                // Remove notification after 3 seconds
+                setTimeout(() => {
+                    if (document.body.contains(notification)) {
+                        document.body.removeChild(notification);
+                    }
+                }, 3000);
+            }
+
+            // Add load recording functionality
+            function loadRecording(file) {
+                const reader = new FileReader();
+
+                reader.onload = function(event) {
+                    try {
+                        const data = JSON.parse(event.target.result);
+
+                        // Check if valid recording file
+                        if (Array.isArray(data.notes) || (data.tracks && Array.isArray(data.tracks[0].events))) {
+                            // Extract notes depending on format
+                            if (Array.isArray(data.notes)) {
+                                recordedNotes = data.notes;
+                            } else if (data.tracks && Array.isArray(data.tracks[0].events)) {
+                                recordedNotes = data.tracks[0].events.map(event => ({
+                                    note: event.note,
+                                    velocity: event.velocity,
+                                    timestamp: event.time,
+                                    isNoteOn: event.type === 'noteOn'
+                                }));
+                            }
+
+                            // Set scale and root note if available
+                            if (data.scale) {
+                                for (const key in scales) {
+                                    if (scales[key].name === data.scale) {
+                                        currentScale = parseInt(key);
+                                        break;
+                                    }
+                                }
+                            }
+
+                            if (data.rootNote && notes.includes(data.rootNote)) {
+                                rootNote = data.rootNote;
+                            }
+
+                            updateNotes();
+                            updateInstrumentText();
+
+                            // Show success notification
+                            showNotification('Recording loaded successfully!', '#4CAF50');
+                        } else {
+                            showNotification('Invalid recording file format', '#f44336');
+                        }
+                    } catch (error) {
+                        console.error('Error loading recording:', error);
+                        showNotification('Error loading recording file', '#f44336');
+                    }
+                };
+
+                reader.readAsText(file);
+            }
+
+            function showNotification(message, color) {
+                const notification = document.createElement('div');
+                notification.textContent = message;
+                notification.style.position = 'fixed';
+                notification.style.bottom = '50px';
+                notification.style.right = '20px';
+                notification.style.backgroundColor = color || '#4CAF50';
+                notification.style.color = 'white';
+                notification.style.padding = '10px 20px';
+                notification.style.borderRadius = '5px';
+                notification.style.fontFamily = "'Press Start 2P', cursive";
+                notification.style.fontSize = '0.8em';
+                notification.style.zIndex = '1001';
+
+                document.body.appendChild(notification);
+
+                setTimeout(() => {
+                    if (document.body.contains(notification)) {
+                        document.body.removeChild(notification);
+                    }
+                }, 3000);
+            }
+
+            // State for the toggle
+            let useOriginalScale = true;
+
+            // Create control buttons
+            function createControlButtons() {
+                const controlsContainer = document.createElement('div');                // below are styles if it is part of piano
+                controlsContainer.className = 'controls-container';
+                controlsContainer.style.position = 'absolute';
+                controlsContainer.style.bottom = '0px'; // '10px';
+                controlsContainer.style.right = '10px';
+                controlsContainer.style.display = 'flex';
+                controlsContainer.style.gap = '5px';
+
+                const recordButton = document.createElement('button');
+                recordButton.id = 'record-button';
+                recordButton.title = 'Record music';
+                recordButton.textContent = '●';
+                recordButton.style.width = '30px';
+                recordButton.style.height = '30px';
+                recordButton.style.borderRadius = '50%';
+                recordButton.style.border = 'none';
+                recordButton.style.backgroundColor = '#616161';
+                recordButton.style.color = 'white';
+                recordButton.style.cursor = 'pointer';
+                recordButton.style.display = 'flex';
+                recordButton.style.justifyContent = 'center';
+                recordButton.style.alignItems = 'center';
+                recordButton.style.fontSize = '14px';
+
+                const playButton = document.createElement('button');
+                playButton.id = 'play-button';
+                playButton.title = 'Play recording';
+                playButton.textContent = '▶';
+                playButton.style.width = '30px';
+                playButton.style.height = '30px';
+                playButton.style.borderRadius = '50%';
+                playButton.style.border = 'none';
+                playButton.style.backgroundColor = '#616161';
+                playButton.style.color = 'white';
+                playButton.style.cursor = 'pointer';
+                playButton.style.display = 'flex';
+                playButton.style.justifyContent = 'center';
+                playButton.style.alignItems = 'center';
+                playButton.style.fontSize = '14px';
+
+                const loadButton = document.createElement('button');
+                loadButton.id = 'load-button';
+                loadButton.title = 'Load recording from file';
+                loadButton.textContent = '↑';
+                loadButton.style.width = '30px';
+                loadButton.style.height = '30px';
+                loadButton.style.borderRadius = '50%';
+                loadButton.style.border = 'none';
+                loadButton.style.backgroundColor = '#616161';
+                loadButton.style.color = 'white';
+                loadButton.style.cursor = 'pointer';
+                loadButton.style.display = 'flex';
+                loadButton.style.justifyContent = 'center';
+                loadButton.style.alignItems = 'center';
+                loadButton.style.fontSize = '14px';
+
+                const saveButton = document.createElement('button');
+                saveButton.id = 'save-button';
+                saveButton.textContent = '↓';
+                saveButton.title = 'Save recording to file';
+                saveButton.style.width = '30px';
+                saveButton.style.height = '30px';
+                saveButton.style.borderRadius = '50%';
+                saveButton.style.border = 'none';
+                saveButton.style.backgroundColor = '#616161';
+                saveButton.style.color = 'white';
+                saveButton.style.cursor = 'pointer';
+                saveButton.style.display = 'flex';
+                saveButton.style.justifyContent = 'center';
+                saveButton.style.alignItems = 'center';
+                saveButton.style.fontSize = '14px';
+
+                recordButton.addEventListener('click', () => {
+                    if (isRecording) {
+                        stopRecording();
+                    } else {
+                        if (isPlaying) stopPlayback();
+                        startRecording();
+                    }
+                });
+
+                playButton.addEventListener('click', () => {
+                    if (isPlaying) {
+                        stopPlayback();
+                    } else {
+                        if (isRecording) stopRecording();
+                        playRecording(useOriginalScale);
+                    }
+                });
+
+                saveButton.addEventListener('click', () => {
+                    if (recordedNotes.length > 0) {
+                        showSaveDialog();
+                    } else {
+                        showNotification('Nothing to save! Record something first.', '#f44336');
+                    }
+                });
+
+                loadButton.addEventListener('click', () => {
+                    // Create hidden file input
+                    const fileInput = document.createElement('input');
+                    fileInput.type = 'file';
+                    fileInput.accept = '.json,.pkeys';
+                    fileInput.style.display = 'none';
+
+                    fileInput.addEventListener('change', (event) => {
+                        if (event.target.files.length > 0) {
+                            loadRecording(event.target.files[0]);
+                        }
+                        document.body.removeChild(fileInput);
+                    });
+
+                    document.body.appendChild(fileInput);
+                    fileInput.click();
+                });
+
+                controlsContainer.appendChild(recordButton);
+                controlsContainer.appendChild(playButton);
+                controlsContainer.appendChild(loadButton);
+                controlsContainer.appendChild(saveButton);
+
+                const helpButton = document.getElementById('toggleInstructions');
+                if (helpButton) {
+                    // Remove the help button from its current location
+                    helpButton.parentNode.removeChild(helpButton);
+                    helpButton.title = 'Show/hide instructions (shortcut "?" key)';
+
+                    // Reset positioning to match other buttons
+                    helpButton.style.position = 'static';
+                    helpButton.style.top = 'auto';
+                    helpButton.style.right = 'auto';
+                    helpButton.style.width = '30px';
+                    helpButton.style.height = '30px';
+                    helpButton.style.fontSize = '14px';
+                    helpButton.style.display = 'flex';
+                    helpButton.style.justifyContent = 'center';
+                    helpButton.style.alignItems = 'center';
+
+                    // Add to controls container
+                    controlsContainer.appendChild(helpButton);
+                }
+
+                // reinterpret the playing
+                const scaleToggleButton = document.createElement('button');
+                scaleToggleButton.id = 'scale-toggle-button';
+                scaleToggleButton.textContent = '♫';
+                scaleToggleButton.title = 'Toggle playback scale: Currently using original scale';
+                scaleToggleButton.style.width = '30px';
+                scaleToggleButton.style.height = '30px';
+                scaleToggleButton.style.borderRadius = '50%';
+                scaleToggleButton.style.border = 'none';
+                scaleToggleButton.style.backgroundColor = '#616161';
+                scaleToggleButton.style.color = 'white';
+                scaleToggleButton.style.cursor = 'pointer';
+                scaleToggleButton.style.display = 'flex';
+                scaleToggleButton.style.justifyContent = 'center';
+                scaleToggleButton.style.alignItems = 'center';
+                scaleToggleButton.style.fontSize = '14px';
+
+                scaleToggleButton.addEventListener('click', () => {
+                    useOriginalScale = !useOriginalScale;
+                    scaleToggleButton.title = useOriginalScale ?
+                        'Toggle playback scale: Currently using original scale' :
+                        'Toggle playback scale: Currently reinterpreting to current scale';
+                    scaleToggleButton.style.backgroundColor = useOriginalScale ? '#616161' : '#2196F3';
+
+                    // If already playing, restart with new setting
+                    if (isPlaying) {
+                        stopPlayback();
+                        playRecording(useOriginalScale);
+                    }
+
+                    showNotification(useOriginalScale ?
+                        'Using original recorded scale' :
+                        'Reinterpreting to current scale',
+                        useOriginalScale ? '#616161' : '#2196F3');
+                });
+
+                controlsContainer.appendChild(scaleToggleButton);
+
+                // piano.appendChild(controlsContainer);
+                document.body.appendChild(controlsContainer);
+            }
+
+            // Update existing functions to work with recording
+            const originalPlaySound = playSound;
+            playSound = function(note, velocity) {
+                originalPlaySound(note, velocity);
+                if (isRecording) {
+                    recordNote(note, velocity, true);
+                }
+            };
+
+            const originalStopSound = stopSound;
+            stopSound = function(note) {
+                originalStopSound(note);
+                if (isRecording) {
+                    recordNote(note, 0, false);
+                }
+            };
+
+            // Save load functionalities end
+
+            updateNotes();
+            updateInstrumentText();
+            createControlButtons();
+
+            keys.forEach(key => {
+                const keyboardKey = key.dataset.key;
+
+                // Add touch support for mobile
+                key.addEventListener('touchstart', (event) => {
+                    event.preventDefault(); // Prevent scrolling when touching keys
+                    const rect = key.getBoundingClientRect();
+                    const touch = event.touches[0];
+                    const touchX = touch.clientX - rect.left;
+                    velocity = Math.min(1, Math.max(0.1, touchX / rect.width));
+                    const actualNote = key.dataset.note;
+                    playSound(actualNote, velocity);
+                    key.classList.add('active');
+                });
+
+                key.addEventListener('touchend', (event) => {
+                    event.preventDefault();
+                    const actualNote = key.dataset.note;
+                    key.classList.remove('active');
+                    stopSound(actualNote);
+                });
+
+                key.addEventListener('mousedown', (event) => {
+                    const rect = key.getBoundingClientRect();
+                    const mouseX = event.clientX - rect.left;
+                    velocity = Math.min(1, Math.max(0.1, mouseX / rect.width));
+                    const actualNote = key.dataset.note; // This will now use the updated note from updateNotes()
+                    playSound(actualNote, velocity);
+                    key.classList.add('active');
+                });
+
+                key.addEventListener('mouseup', () => {
+                    const actualNote = key.dataset.note; // Get current note
+                    key.classList.remove('active');
+                    stopSound(actualNote);
+                });
+
+                key.addEventListener('mouseleave', () => {
+                    const actualNote = key.dataset.note; // Get current note
+                    key.classList.remove('active');
+                    stopSound(actualNote);
+                });
+            });
+
+            function playSound(note, velocity) {
+                if (Tone.context.state !== 'running') {
+                    Tone.context.resume();
+                }
+
+                if (!pressedKeys.has(note)) {
+                    currentSynth = synths[1];
+                    try {
+                        currentSynth.triggerAttack(note, undefined, velocity);
+                        pressedKeys.add(note);
+                        activeKeys.set(note, currentSynth);
+                    } catch (error) {
+                        console.error("Error triggering attack:", error, note);
+                    }
+                }
+            }
+
+            // function playSound(note, velocity) {
+            //     if (!pressedKeys.has(note)) {
+            //         currentSynth = synths[1];
+            //         try {
+            //             currentSynth.triggerAttack(note, undefined, velocity);
+            //         } catch (error) {
+            //             console.error("Error triggering attack:", error);
+            //             return;
+            //         }
+            //         pressedKeys.add(note);
+            //         activeKeys.set(note, currentSynth);
+            //     }
+            // }
+
+            function stopSound(note) {
+                const synthInstance = activeKeys.get(note);
+                if (synthInstance) {
+                    try {
+                        synthInstance.triggerRelease(note);
+                    } catch (error) {
+                        console.error("Error triggering release:", error);
+                    }
+                    pressedKeys.delete(note);
+                    activeKeys.delete(note);
+                }
+            }
+
+            document.addEventListener('keydown', (event) => {
+
+                // Prevent default for arrow keys to avoid page scrolling
+                if (event.key === 'ArrowUp' || event.key === 'ArrowDown' ||
+                    event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+                    event.preventDefault();
+                }
+
+                const key = event.key.toLowerCase();
+                const keyIndex = Object.keys(keyMap).indexOf(key);
+                if (keyIndex !== -1) {
+                    const actualNote = document.querySelector(`[data-key="${key}"]`).dataset.note;
+                    const keyElement = document.querySelector(`[data-key="${key}"]`);
+                    if (keyElement && !pressedKeys.has(actualNote)) {
+                        playSound(actualNote, velocity);
+                        keyElement.classList.add('active');
+                    }
+                }
+
+                if (event.key === 'ArrowUp') {
+                    octave = Math.min(octave + 1, 8);
+                    updateNotes();
+                    updateInstrumentText();
+                    releaseAllKeys();
+                } else if (event.key === 'ArrowDown') {
+                    octave = Math.max(octave - 1, 0);
+                    updateNotes();
+                    updateInstrumentText();
+                    releaseAllKeys();
+                } else if (event.key === 'Shift') {
+                    velocity = 0.2;
+                } else if (event.key == '?') {
+                    // Reuse the existing toggle functionality by simulating a click on the toggle button
+                    const toggleButton = document.getElementById('toggleInstructions');
+                    toggleButton.click();
+                } else if (event.key >= '1' && event.key <= '9') {
+                    const scaleNumber = parseInt(event.key);
+                    if (scaleNumber >= 1 && scaleNumber <= 9) {
+                        currentScale = scaleNumber;
+                        updateNotes();
+                        updateInstrumentText();
+                        releaseAllKeys();
+                    }
+                } else if (event.key === 'ArrowLeft') {
+                    const currentRootIndex = notes.indexOf(rootNote);
+                    if (currentRootIndex > 0) {
+                        rootNote = notes[currentRootIndex - 1];
+                    } else {
+                        rootNote = notes[11];
+                    }
+                    updateNotes();
+                    updateInstrumentText();
+                    releaseAllKeys();
+                } else if (event.key === 'ArrowRight') {
+                    const currentRootIndex = notes.indexOf(rootNote);
+                    if (currentRootIndex < 11) {
+                        rootNote = notes[currentRootIndex + 1];
+                    } else {
+                        rootNote = notes[0];
+                    }
+                    updateNotes();
+                    updateInstrumentText();
+                    releaseAllKeys();
+                }
+            });
+
+            document.addEventListener('keyup', (event) => {
+                const key = event.key.toLowerCase();
+                const keyIndex = Object.keys(keyMap).indexOf(key);
+                if (keyIndex !== -1) {
+                    const actualNote = document.querySelector(`[data-key="${key}"]`).dataset.note;
+                    const keyElement = document.querySelector(`[data-key="${key}"]`);
+                    if (keyElement) {
+                        keyElement.classList.remove('active');
+                        stopSound(actualNote);
+                    }
+                } else if (event.key === 'Shift') {
+                    velocity = 0.8;
+                }
+            });
+
+            function releaseAllKeys() {
+                activeKeys.forEach((synthInstance, note) => {
+                    try {
+                        synthInstance.triggerRelease(note);
+                    } catch (error) {
+                        console.error("Error releasing note:", note, error);
+                    }
+                    pressedKeys.delete(note);
+                });
+                activeKeys.clear();
+                keys.forEach(key => key.classList.remove('active'));
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.getElementById('toggleInstructions');
+            const instructionsContent = document.getElementById('instructionsContent');
+            const instructionsContainer = document.getElementById('instructionsContainer');
+
+            toggleButton.addEventListener('click', function() {
+                instructionsContent.classList.toggle('hidden');
+                instructionsContainer.classList.toggle('collapsed');
+                toggleButton.textContent = instructionsContent.classList.contains('hidden') ? '?' : '×';
+            });
+
+            // Initialize in collapsed state
+            instructionsContent.classList.add('hidden');
+            instructionsContainer.classList.add('collapsed');
+            toggleButton.textContent = '?';
+        });
+
+
+    </script>
+</body>
+</html>
