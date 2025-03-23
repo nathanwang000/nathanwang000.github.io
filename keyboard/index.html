@@ -269,6 +269,7 @@
                     <li><span class="key-icon">7</span> Harmonic Minor</li>
                     <li><span class="key-icon">8</span> Japanese</li>
                     <li><span class="key-icon">9</span> Blues</li>
+                    <li><span class="key-icon">0</span> Chinese</li>
                 </ul>
             </li>
             <li>Type to play notes (A-L, W-P keys)</li>
@@ -304,6 +305,7 @@
         <div class="key" data-note="D5" data-key="l"><span class="key-label">L</span></div>
         <div class="key black" data-note="D#5" data-key="p"><span class="key-label">P</span></div>
         <div class="key" data-note="E5" data-key=";"><span class="key-label">;</span></div>
+        <div class="key" data-note="F5" data-key="'"><span class="key-label">'</span></div>
     </div>
 
     <script>
@@ -417,7 +419,10 @@
                 6: { name: "Locrian", intervals: [0, 1, 3, 5, 6, 8, 10] },
                 7: { name: "Harmonic Minor", intervals: [0, 2, 3, 5, 7, 8, 11] },
                 8: { name: "Japanese", intervals: [0, 2, 3, 7, 8] },
-                9: { name: "Blues", intervals: [0, 2, 3, 4, 5, 7, 10] }
+                // 9: { name: "Blues", intervals: [0, 2, 3, 4, 5, 7, 10] },
+                9: { name: "Pentatonic (m)", intervals: [0, 3, 5, 7, 10] },
+                // 0: { name: "Custom", intervals: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] }
+                0: { name: "Chinese", intervals: [0, 2, 4, 7, 9] }
             };
 
             const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
@@ -425,10 +430,10 @@
                 'a': 0, 'w': 1, 's': 2, 'e': 3, 'd': 4,
                 'f': 5, 't': 6, 'g': 7, 'y': 8, 'h': 9,
                 'u': 10, 'j': 11, 'k': 12, 'o': 13, 'l': 14,
-                'p': 15, ';': 16
+                'p': 15, ';': 16, "'": 17
             };
 
-            const whiteKeys = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';'];
+            const whiteKeys = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'"];
             const blackKeys = ['w', 'e', 't', 'y', 'u', 'o', 'p'];
 
             function getNoteFromInterval(rootNote, interval, octave) {
@@ -455,8 +460,8 @@
                     return noteInfo.noteName + noteInfo.octave;
                 });
 
-                const whiteKeyOrder = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';'];
-                const blackKeyOrder = ['w', 'e', 't', 'y', 'u', 'o', 'p'];
+                const whiteKeyOrder = whiteKeys;
+                const blackKeyOrder = blackKeys;
                 const blackKeyOffsets = [1, 3, 6, 8, 10, 13, 15];
 
                 whiteKeyOrder.forEach((keyDataKey, index) => {
@@ -734,22 +739,23 @@
                             if (relativeInfo.scaleDegree !== -1) {
                                 // It's a scale tone - use the corresponding degree in the current scale
                                 const currentScaleIntervals = scales[currentScale].intervals;
+
+                                // Get the degree within the current scale
                                 const degreeIndex = (relativeInfo.scaleDegree - 1) % currentScaleIntervals.length;
                                 const interval = currentScaleIntervals[degreeIndex];
 
-                                // Calculate octave offset
-                                const octaveOffset = Math.floor((relativeInfo.scaleDegree - 1) / currentScaleIntervals.length);
-
-                                // Get the new note
-                                const noteInfo = getNoteFromInterval(rootNote, interval, octave + octaveOffset);
+                                // interval already will properly handle the octave
+                                const noteInfo = getNoteFromInterval(rootNote, interval, parseInt(octave));
                                 noteToPlay = noteInfo.noteName + noteInfo.octave;
                             } else {
                                 // It's not a scale tone - use absolute semitones from root
                                 const rootIndex = notes.indexOf(rootNote);
-                                const absoluteIndex = (rootIndex + relativeInfo.absoluteSemitones) % 12;
-                                const absoluteOctave = octave + Math.floor((rootIndex + relativeInfo.absoluteSemitones) / 12);
-                                noteToPlay = notes[absoluteIndex] + absoluteOctave;
+                                const semitoneDistance = relativeInfo.absoluteSemitones;
+                                const targetOctave = parseInt(octave) + Math.floor(semitoneDistance / 12);
+                                const targetSemitone = (rootIndex + semitoneDistance) % 12;
+                                noteToPlay = notes[targetSemitone] + targetOctave;
                             }
+
                         }
 
                         if (noteEvent.isNoteOn) {
@@ -777,6 +783,7 @@
                             setTimeout(() => {
                                 currentScale = originalUIScale;
                                 rootNote = originalUIRoot;
+                                octave = originalUIOctave;
                                 updateNotes();
                                 updateInstrumentText();
                             }, 500); // Small delay to let final notes finish
@@ -1106,7 +1113,8 @@
 
             // Create control buttons
             function createControlButtons() {
-                const controlsContainer = document.createElement('div');                // below are styles if it is part of piano
+                const controlsContainer = document.createElement('div');
+                // below are styles if it is part of piano
                 controlsContainer.className = 'controls-container';
                 controlsContainer.style.position = 'absolute';
                 controlsContainer.style.bottom = '0px'; // '10px';
@@ -1724,9 +1732,9 @@
                     // Reuse the existing toggle functionality by simulating a click on the toggle button
                     const toggleButton = document.getElementById('toggleInstructions');
                     toggleButton.click();
-                } else if (event.key >= '1' && event.key <= '9') {
+                } else if (event.key >= '0' && event.key <= '9') {
                     const scaleNumber = parseInt(event.key);
-                    if (scaleNumber >= 1 && scaleNumber <= 9) {
+                    if (scaleNumber >= 0 && scaleNumber <= 9) {
                         currentScale = scaleNumber;
                         updateNotes();
                         updateInstrumentText();
