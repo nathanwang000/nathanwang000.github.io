@@ -1,12 +1,14 @@
+    <link rel="icon"
+          href="/static/favicon.ico"
+          type="image/png">
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scale-Based Keyboard</title>
-    <link rel="icon"
-          href="/static/favicon.ico"
-          type="image/png">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <!-- <script src="https://unpkg.com/tone"></script> -->
     <style>
@@ -496,12 +498,27 @@
                         return calculatedNoteInfo.noteName === noteName;
                     });
 
+                    // Check if this is the root note or an octave of the root note
+                    const isRootNote = noteName === rootNote;
+
                     if (whiteKeys.includes(key.dataset.key)) {
                         if (!isScaleNote) {
                             console.warn("White key playing a non-scale note:", note);
                             key.classList.add('black'); // Indicate error visually
                         } else {
                             key.classList.remove('black');
+                        }
+                        // Add root note highlighting
+                        if (isRootNote) {
+                            key.style.borderLeft = '5px solid #4CAF50';
+                            key.style.borderRight = '5px solid #4CAF50';
+                            key.style.borderTop = '5px solid #4CAF50';
+                            key.style.borderBottom = '5px solid #4CAF50';
+                        } else {
+                            key.style.borderLeft = '';
+                            key.style.borderRight = '';
+                            key.style.borderTop = '';
+                            key.style.borderBottom = '';
                         }
                     } else if (blackKeys.includes(key.dataset.key)) {
                         const baseNoteIndex = notes.indexOf(noteName);
@@ -512,6 +529,18 @@
                             key.classList.add('black');
                         } else if (!isScaleNote) {
                             key.classList.add('black');
+                        }
+                        // Add root note highlighting for black keys
+                        if (isRootNote) {
+                            key.style.borderLeft = '5px solid #4CAF50';
+                            key.style.borderRight = '5px solid #4CAF50';
+                            key.style.borderTop = '5px solid #4CAF50';
+                            key.style.borderBottom = '5px solid #4CAF50';
+                        } else {
+                            key.style.borderLeft = '';
+                            key.style.borderRight = '';
+                            key.style.borderTop = '';
+                            key.style.borderBottom = '';
                         }
                     }
                 });
@@ -637,43 +666,6 @@
                     }
                 });
             }
-
-
-            // function playRecording() {
-            //     if (isPlaying || recordedNotes.length === 0) return;
-            //     isPlaying = true;
-            //     updatePlayButton();
-
-            //     let currentIndex = 0;
-            //     const startTime = Date.now();
-
-            //     playbackTimer = setInterval(() => {
-            //         const currentTime = Date.now() - startTime;
-
-            //         while (currentIndex < recordedNotes.length && recordedNotes[currentIndex].timestamp <= currentTime) {
-            //             const noteEvent = recordedNotes[currentIndex];
-            //             if (noteEvent.isNoteOn) {
-            //                 playSound(noteEvent.note, noteEvent.velocity);
-
-            //                 // Highlight the key
-            //                 const keyElement = findKeyByNote(noteEvent.note);
-            //                 if (keyElement) keyElement.classList.add('active');
-            //             } else {
-            //                 stopSound(noteEvent.note);
-
-            //                 // Remove highlight
-            //                 const keyElement = findKeyByNote(noteEvent.note);
-            //                 if (keyElement) keyElement.classList.remove('active');
-            //             }
-
-            //             currentIndex++;
-            //         }
-
-            //         if (currentIndex >= recordedNotes.length) {
-            //             stopPlayback();
-            //         }
-            //     }, 10);
-            // }
 
             function playRecording(useOriginalScale = false) {
                 if (isPlaying || recordedNotes.length === 0) return;
