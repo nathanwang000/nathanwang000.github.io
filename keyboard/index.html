@@ -9,6 +9,7 @@
           href="/static/favicon.ico"
           type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- <script src="https://unpkg.com/tone"></script> -->
     <style>
         body {
             display: flex;
@@ -511,12 +512,12 @@
                             key.style.borderLeft = '5px solid #4CAF50';
                             key.style.borderRight = '5px solid #4CAF50';
                             key.style.borderTop = '5px solid #4CAF50';
-                            key.style.borderBottom = '5px solid #4CAF50';
+                            // key.style.borderBottom = '5px solid #4CAF50';
                         } else {
                             key.style.borderLeft = '';
                             key.style.borderRight = '';
                             key.style.borderTop = '';
-                            key.style.borderBottom = '';
+                            // key.style.borderBottom = '';
                         }
                     } else if (blackKeys.includes(key.dataset.key)) {
                         const baseNoteIndex = notes.indexOf(noteName);
@@ -533,12 +534,12 @@
                             key.style.borderLeft = '5px solid #4CAF50';
                             key.style.borderRight = '5px solid #4CAF50';
                             key.style.borderTop = '5px solid #4CAF50';
-                            key.style.borderBottom = '5px solid #4CAF50';
+                            // key.style.borderBottom = '5px solid #4CAF50';
                         } else {
                             key.style.borderLeft = '';
                             key.style.borderRight = '';
                             key.style.borderTop = '';
-                            key.style.borderBottom = '';
+                            // key.style.borderBottom = '';
                         }
                     }
                 });
@@ -629,7 +630,9 @@
                 const noteIndex = notes.indexOf(noteName);
 
                 // Calculate the relative position considering octaves
-                const absoluteSemitones = (noteOctave - octave) * 12 + ((noteIndex - rootIndex + 12) % 12);
+                // below incorrect calculate C5-B4 (should be 1 semitone but calculated as 12+11)
+                // const absoluteSemitones = (noteOctave - octave) * 12 + ((noteIndex - rootIndex + 12) % 12);
+                const absoluteSemitones = (noteOctave - octave) * 12 + noteIndex - rootIndex;
 
                 // Find degree in the scale (1-based index in the scale)
                 const scaleIntervals = scales[currentScale].intervals;
@@ -733,16 +736,15 @@
                                 // Get the degree within the current scale
                                 const degreeIndex = (relativeInfo.scaleDegree - 1) % currentScaleIntervals.length;
                                 const interval = currentScaleIntervals[degreeIndex];
-
-                                // interval already will properly handle the octave
+                                const extra_octaves = Math.floor(relativeInfo.absoluteSemitones / 12);
                                 const noteInfo = getNoteFromInterval(rootNote, interval, parseInt(octave));
-                                noteToPlay = noteInfo.noteName + noteInfo.octave;
+                                noteToPlay = noteInfo.noteName + (noteInfo.octave + extra_octaves);
                             } else {
                                 // It's not a scale tone - use absolute semitones from root
                                 const rootIndex = notes.indexOf(rootNote);
-                                const semitoneDistance = relativeInfo.absoluteSemitones;
-                                const targetOctave = parseInt(octave) + Math.floor(semitoneDistance / 12);
-                                const targetSemitone = (rootIndex + semitoneDistance) % 12;
+                                const noteSemitoneDistance = relativeInfo.absoluteSemitones + rootIndex;
+                                const targetOctave = parseInt(octave) + Math.floor(noteSemitoneDistance / 12);
+                                const targetSemitone = noteSemitoneDistance % 12;
                                 noteToPlay = notes[targetSemitone] + targetOctave;
                             }
 
