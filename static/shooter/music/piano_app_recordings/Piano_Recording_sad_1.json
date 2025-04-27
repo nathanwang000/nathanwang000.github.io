@@ -1,0 +1,512 @@
+{
+  "name": "Piano_Recording_sad",
+  "date": "2025-03-24T17:03:54.820Z",
+  "scale": "Dorian",
+  "rootNote": "C#",
+  "notes": [
+    {
+      "note": "C4",
+      "velocity": 0.8,
+      "timestamp": 959,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D4",
+      "velocity": 0.8,
+      "timestamp": 1380,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C4",
+      "velocity": 0,
+      "timestamp": 1432,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#4",
+      "velocity": 0.8,
+      "timestamp": 1765,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 3,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D4",
+      "velocity": 0,
+      "timestamp": 1829,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F4",
+      "velocity": 0.8,
+      "timestamp": 2153,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#4",
+      "velocity": 0,
+      "timestamp": 2175,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 3,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F4",
+      "velocity": 0,
+      "timestamp": 2569,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#4",
+      "velocity": 0.8,
+      "timestamp": 2571,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 10,
+        "scaleDegree": 7,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#4",
+      "velocity": 0,
+      "timestamp": 2871,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 10,
+        "scaleDegree": 7,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C5",
+      "velocity": 0.8,
+      "timestamp": 2953,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G4",
+      "velocity": 0.8,
+      "timestamp": 3403,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C5",
+      "velocity": 0,
+      "timestamp": 3403,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G4",
+      "velocity": 0,
+      "timestamp": 3896,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F4",
+      "velocity": 0.8,
+      "timestamp": 4155,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F4",
+      "velocity": 0,
+      "timestamp": 4538,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#4",
+      "velocity": 0.8,
+      "timestamp": 4550,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 3,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D4",
+      "velocity": 0.8,
+      "timestamp": 4938,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#4",
+      "velocity": 0,
+      "timestamp": 4979,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 3,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C4",
+      "velocity": 0.8,
+      "timestamp": 5358,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D4",
+      "velocity": 0,
+      "timestamp": 5388,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C4",
+      "velocity": 0,
+      "timestamp": 5610,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G3",
+      "velocity": 0.8,
+      "timestamp": 5816,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 3
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G3",
+      "velocity": 0,
+      "timestamp": 6058,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 3
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G3",
+      "velocity": 0.8,
+      "timestamp": 6250,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 3
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G3",
+      "velocity": 0,
+      "timestamp": 6474,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 3
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C3",
+      "velocity": 0.8,
+      "timestamp": 6755,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 3
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C3",
+      "velocity": 0,
+      "timestamp": 7436,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 2,
+        "scaleName": "Dorian",
+        "rootNote": "C",
+        "octave": 3
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    }
+  ]
+}

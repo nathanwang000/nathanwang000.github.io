@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+ 
 
     <title>Jiaxuan Wang</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +14,18 @@
       href="/static/favicon.ico"
       type="image/png">
 
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, user-scalable=0 minimum-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content=
+      "black">
+
+<title>Alien Invasion</title>
+<link rel="stylesheet" href="/static/shooter_static/base.css" type="text/css" />
+
   </head>
   <body>
-
+    
 <div class="navbar navbar-inverse" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -38,60 +48,50 @@
     </div>
 </div>
 
-
+    
 <div class="container">
+  
+  
+<audio id="title_music" src="/static/shooter_static/music/mount_and_blade_title_screen.ogg"
+       preload="auto" loop>
+  Your browser doesn't support audio tag
+</audio>
+<audio id="victory_music" src="/static/shooter_static/music/victorious_swadian.ogg"
+       preload="auto" loop>
+  Your browser doesn't support audio tag
+</audio>
+<audio id="defeat_music" src="/static/shooter_static/music/defeated_by_neutral.ogg"
+       preload="auto" loop>
+  Your browser doesn't support audio tag
+</audio>
+<audio id="battle_music" src="/static/shooter_static/music/crazy_battle_music.ogg"
+       preload="auto" loop>
+  Your browser doesn't support audio tag
+</audio>
+
+<audio id="shoot_sound" src="/static/shooter_static/sound/arrow_pass_by_1.ogg"
+       preload="auto">
+  Your browser doesn't support audio tag
+</audio>
+<audio id="hit_sound" src="/static/shooter_static/sound/blunt_hit_high_3.ogg"
+       preload="auto">
+  Your browser doesn't support audio tag
+</audio>
 
 
-
-<div class="wrapper">
-  Some random stuff I'm currently working on: <br/><br/>
-  <ul>
-    <li><a href="/keyboard">Keyboard piano for improvisation</a></li>
-  </ul>
-
-  Some random small programming toys I did as an undergrad. <br/><br/>
-
-  <ul>
-    <li><a href="/timeTable">Time_Table</a></li>
-    <li><a href="/blog">Blog</a></li>
-    <li><a href="/2048">2048</a></li>
-    <li><a href="/college_shooter">shooter</a></li>
-    <li><a href="/snake">snake</a></li>
-    <li><a href="http://littleprince.herokuapp.com/games"
-	   target="_blank">little prince</a></li>
-  </ul>
-
-  Songs from favorite artists: <br/><br/>
-
-  <ul>
-    <li><a href="https://www.youtube.com/watch?v=l8UPST1ZKSw">一块红布 -- 崔健</a></li>
-    <li><a href="https://www.youtube.com/watch?v=70v7WZKQkwk">融·解 -- 苏紫旭</a></li>
-    <li><a href="https://www.youtube.com/watch?v=xbq-_2TqHVQ">杀死那个石家庄人 -- 万能青年旅店</a></li>
-    <li><a href="https://www.youtube.com/watch?v=Kj5Js79SqZ0">I don't care -- AR</a></li>
-    <li><a href="https://www.youtube.com/watch?v=zxCVcVSW-nE">北京晚报 -- 阴三</a></li>
-    <li><a href="https://www.youtube.com/watch?v=jsVaeCLJjHs">无人喝彩 -- 小老虎</a></li>
-    <li><a href="https://www.youtube.com/watch?v=rVEMTxg_LrU">山丘 -- 李宗盛</a></li>
-    <li><a href="https://www.youtube.com/watch?v=Z-2KToSVGqk">Purple Soul -- 龙胆紫</a></li>
-    <li><a href="https://www.youtube.com/watch?v=i7a8vwx3BPQ">江湖流 -- Cblock x Gai</a></li>
-
-  </ul>
-
-  Favorite basketball players: <br/> <br/>
-
-  <ul>
-    <li>Jamal Crawford</li>
-    <li>Kevin Durant</li>
-    <li>Michael Jordan</li>
-  </ul>
-
-
-
+<div id='shooter_container'>
+  <canvas id="game" width='320' height='480'>
+    Your browser doesn't support canvas tag
+  </canvas>
+  <button onclick="Game.stopMusic()" style="display:block" class="btn btn-default">toggle sound</button>
 </div>
+<script src='/static/shooter_static/engine.js'></script>
+<script src='/static/shooter_static/game.js'></script>
 
 </div>
 
 
-
+    
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>

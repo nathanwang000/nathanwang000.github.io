@@ -1,0 +1,2132 @@
+{
+  "name": "Piano_Recording_dont_stop_me_now",
+  "date": "2025-03-23T18:47:52.215Z",
+  "scale": "Major",
+  "rootNote": "F#",
+  "notes": [
+    {
+      "note": "G#4",
+      "velocity": 0.8,
+      "timestamp": 2244,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#4",
+      "velocity": 0.8,
+      "timestamp": 2599,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#4",
+      "velocity": 0,
+      "timestamp": 2678,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#4",
+      "velocity": 0,
+      "timestamp": 2806,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#4",
+      "velocity": 0.8,
+      "timestamp": 2971,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#4",
+      "velocity": 0,
+      "timestamp": 3490,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#4",
+      "velocity": 0.8,
+      "timestamp": 3678,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#4",
+      "velocity": 0.8,
+      "timestamp": 4016,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 4,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#4",
+      "velocity": 0,
+      "timestamp": 4045,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C#5",
+      "velocity": 0.8,
+      "timestamp": 4357,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#4",
+      "velocity": 0,
+      "timestamp": 4385,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 4,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C#5",
+      "velocity": 0,
+      "timestamp": 4587,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#5",
+      "velocity": 0.8,
+      "timestamp": 4687,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#5",
+      "velocity": 0,
+      "timestamp": 4888,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F5",
+      "velocity": 0.8,
+      "timestamp": 5050,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 11,
+        "scaleDegree": 7,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F5",
+      "velocity": 0,
+      "timestamp": 6433,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 11,
+        "scaleDegree": 7,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C#5",
+      "velocity": 0.8,
+      "timestamp": 6656,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C#5",
+      "velocity": 0,
+      "timestamp": 6951,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#4",
+      "velocity": 0.8,
+      "timestamp": 7027,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 4,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#4",
+      "velocity": 0,
+      "timestamp": 7245,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 4,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#4",
+      "velocity": 0.8,
+      "timestamp": 7507,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#4",
+      "velocity": 0,
+      "timestamp": 8069,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#4",
+      "velocity": 0.8,
+      "timestamp": 8254,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#4",
+      "velocity": 0,
+      "timestamp": 9092,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#4",
+      "velocity": 0.8,
+      "timestamp": 9325,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 4,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#4",
+      "velocity": 0,
+      "timestamp": 9590,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 4,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#4",
+      "velocity": 0.8,
+      "timestamp": 9689,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#4",
+      "velocity": 0,
+      "timestamp": 9878,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#4",
+      "velocity": 0.8,
+      "timestamp": 10016,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#4",
+      "velocity": 0,
+      "timestamp": 10200,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#4",
+      "velocity": 0.8,
+      "timestamp": 10370,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#4",
+      "velocity": 0,
+      "timestamp": 10785,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#4",
+      "velocity": 0.8,
+      "timestamp": 11352,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 4,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#4",
+      "velocity": 0,
+      "timestamp": 11753,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 4,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B4",
+      "velocity": 0.8,
+      "timestamp": 12151,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B4",
+      "velocity": 0,
+      "timestamp": 12468,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C#5",
+      "velocity": 0.8,
+      "timestamp": 12845,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C#5",
+      "velocity": 0,
+      "timestamp": 13571,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#5",
+      "velocity": 0.8,
+      "timestamp": 14185,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 9,
+        "scaleDegree": 6,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#5",
+      "velocity": 0,
+      "timestamp": 14327,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 9,
+        "scaleDegree": 6,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F5",
+      "velocity": 0.8,
+      "timestamp": 14523,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 11,
+        "scaleDegree": 7,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F5",
+      "velocity": 0,
+      "timestamp": 14903,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 11,
+        "scaleDegree": 7,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#5",
+      "velocity": 0.8,
+      "timestamp": 15414,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#5",
+      "velocity": 0,
+      "timestamp": 17216,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#5",
+      "velocity": 0.8,
+      "timestamp": 17697,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 16,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#5",
+      "velocity": 0,
+      "timestamp": 18323,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 16,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B5",
+      "velocity": 0.8,
+      "timestamp": 18386,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 17,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B5",
+      "velocity": 0,
+      "timestamp": 18625,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 17,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#5",
+      "velocity": 0.8,
+      "timestamp": 18742,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 16,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#5",
+      "velocity": 0,
+      "timestamp": 19127,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 16,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#5",
+      "velocity": 0.8,
+      "timestamp": 19498,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#5",
+      "velocity": 0,
+      "timestamp": 19880,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#5",
+      "velocity": 0.8,
+      "timestamp": 20287,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#5",
+      "velocity": 0,
+      "timestamp": 20469,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#5",
+      "velocity": 0.8,
+      "timestamp": 20635,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 9,
+        "scaleDegree": 6,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#5",
+      "velocity": 0,
+      "timestamp": 22074,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 9,
+        "scaleDegree": 6,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#5",
+      "velocity": 0.8,
+      "timestamp": 22564,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 16,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#5",
+      "velocity": 0,
+      "timestamp": 22787,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 16,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#5",
+      "velocity": 0.8,
+      "timestamp": 22896,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 16,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#5",
+      "velocity": 0,
+      "timestamp": 23059,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 16,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B5",
+      "velocity": 0.8,
+      "timestamp": 23228,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 17,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B5",
+      "velocity": 0,
+      "timestamp": 23404,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 17,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#5",
+      "velocity": 0.8,
+      "timestamp": 23564,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 16,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#5",
+      "velocity": 0,
+      "timestamp": 23811,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 16,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#5",
+      "velocity": 0.8,
+      "timestamp": 24232,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#5",
+      "velocity": 0,
+      "timestamp": 24476,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G5",
+      "velocity": 0.8,
+      "timestamp": 24890,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 13,
+        "scaleDegree": -1,
+        "isScaleTone": false
+      }
+    },
+    {
+      "note": "G5",
+      "velocity": 0,
+      "timestamp": 25095,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 13,
+        "scaleDegree": -1,
+        "isScaleTone": false
+      }
+    },
+    {
+      "note": "G5",
+      "velocity": 0.8,
+      "timestamp": 25231,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 13,
+        "scaleDegree": -1,
+        "isScaleTone": false
+      }
+    },
+    {
+      "note": "G5",
+      "velocity": 0,
+      "timestamp": 25511,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 13,
+        "scaleDegree": -1,
+        "isScaleTone": false
+      }
+    },
+    {
+      "note": "G#5",
+      "velocity": 0.8,
+      "timestamp": 25864,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#5",
+      "velocity": 0,
+      "timestamp": 26170,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#5",
+      "velocity": 0.8,
+      "timestamp": 26501,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 16,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#5",
+      "velocity": 0,
+      "timestamp": 26833,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 16,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#5",
+      "velocity": 0.8,
+      "timestamp": 27184,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 9,
+        "scaleDegree": 6,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B5",
+      "velocity": 0.8,
+      "timestamp": 27514,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 17,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#5",
+      "velocity": 0,
+      "timestamp": 27551,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 9,
+        "scaleDegree": 6,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B5",
+      "velocity": 0,
+      "timestamp": 27963,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 17,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#5",
+      "velocity": 0.8,
+      "timestamp": 28480,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 16,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#5",
+      "velocity": 0,
+      "timestamp": 28841,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 16,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#5",
+      "velocity": 0.8,
+      "timestamp": 29245,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#5",
+      "velocity": 0,
+      "timestamp": 29558,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B4",
+      "velocity": 0.8,
+      "timestamp": 29955,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B4",
+      "velocity": 0,
+      "timestamp": 30157,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B4",
+      "velocity": 0.8,
+      "timestamp": 30333,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B4",
+      "velocity": 0,
+      "timestamp": 30635,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C#5",
+      "velocity": 0.8,
+      "timestamp": 31000,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C#5",
+      "velocity": 0,
+      "timestamp": 31234,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#5",
+      "velocity": 0.8,
+      "timestamp": 31681,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 9,
+        "scaleDegree": 6,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#5",
+      "velocity": 0,
+      "timestamp": 32053,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 9,
+        "scaleDegree": 6,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B5",
+      "velocity": 0.8,
+      "timestamp": 32461,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 17,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B5",
+      "velocity": 0,
+      "timestamp": 32959,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 17,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#5",
+      "velocity": 0.8,
+      "timestamp": 33481,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 16,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#5",
+      "velocity": 0,
+      "timestamp": 33818,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 16,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#5",
+      "velocity": 0.8,
+      "timestamp": 34181,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#5",
+      "velocity": 0,
+      "timestamp": 34540,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B4",
+      "velocity": 0.8,
+      "timestamp": 34922,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B4",
+      "velocity": 0,
+      "timestamp": 35109,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B4",
+      "velocity": 0.8,
+      "timestamp": 35285,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B4",
+      "velocity": 0,
+      "timestamp": 35556,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C#5",
+      "velocity": 0.8,
+      "timestamp": 35926,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C#5",
+      "velocity": 0,
+      "timestamp": 36300,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#5",
+      "velocity": 0.8,
+      "timestamp": 36631,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 9,
+        "scaleDegree": 6,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#5",
+      "velocity": 0,
+      "timestamp": 37006,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 9,
+        "scaleDegree": 6,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F5",
+      "velocity": 0.8,
+      "timestamp": 37429,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 11,
+        "scaleDegree": 7,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F5",
+      "velocity": 0,
+      "timestamp": 37651,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 11,
+        "scaleDegree": 7,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F5",
+      "velocity": 0.8,
+      "timestamp": 37770,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 11,
+        "scaleDegree": 7,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F5",
+      "velocity": 0,
+      "timestamp": 38062,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 11,
+        "scaleDegree": 7,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#5",
+      "velocity": 0.8,
+      "timestamp": 38487,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#5",
+      "velocity": 0,
+      "timestamp": 38775,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#5",
+      "velocity": 0.8,
+      "timestamp": 39256,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#5",
+      "velocity": 0,
+      "timestamp": 39515,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#4",
+      "velocity": 0.8,
+      "timestamp": 40007,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#4",
+      "velocity": 0.8,
+      "timestamp": 40073,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 4,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#5",
+      "velocity": 0.8,
+      "timestamp": 40073,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "A#4",
+      "velocity": 0,
+      "timestamp": 42065,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 4,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#5",
+      "velocity": 0,
+      "timestamp": 42072,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F#4",
+      "velocity": 0,
+      "timestamp": 42097,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 1,
+        "scaleName": "Major",
+        "rootNote": "F#",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "F#",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    }
+  ]
+}

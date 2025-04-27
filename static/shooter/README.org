@@ -1,0 +1,109 @@
+* Places to find good CC0 music
+
+theme_music: '/static/shooter/music/umich.m4a',
+sad music site: https://opengameart.org/content/cc0-sad-music
+retro music site: https://opengameart.org/content/cc0-retro-music
+cinematic music: https://opengameart.org/content/cc0-cinematic-music
+theme_music: 'https://ia902905.us.archive.org/11/items/TetrisThemeMusic/Tetris.mp3',
+classical music: 'https://opengameart.org/art-search-advanced?keys=classical%20music&title=&field_art_tags_tid_op=or&field_art_tags_tid=&name=&field_art_type_tid%5B0%5D=12&field_art_licenses_tid%5B0%5D=4&sort_by=count&sort_order=DESC&items_per_page=24&Collection=&page=1'
+
+* Emoji customization ideas
+
+```
+// Add before the gameData object
+const visualLibraries = {
+    emoji: {
+        weapons: ["🔫", "⚔️", "🏹", "🔨", "🔪", "💣", "🧨", "🪓", "🪚", "🛠️", "⛏️", "🪄", "🗡️"],
+        food: ["🍕", "🍔", "🍟", "🌭", "🍿", "🥪", "🌮", "🌯", "🥙", "🍳", "🍖", "🍗", "🥩", "🍱"],
+        nature: ["🔥", "💧", "🌪️", "⚡", "❄️", "🌈", "☄️", "💥", "🌊", "🌱", "🌲", "🍂", "🪨"],
+        animals: ["🐶", "🐱", "🐭", "🦊", "🐻", "🐼", "🐨", "🐯", "🦁", "🐮", "🐷", "🐸", "🐙", "🦄"],
+        sports: ["⚽", "🏀", "🏈", "⚾", "🥎", "🎾", "🏐", "🏉", "🎱", "🏓", "🏸", "🥊", "⛳", "🏂"],
+        tech: ["💻", "📱", "📟", "🔋", "💾", "💿", "🖨️", "🔌", "📡", "🛰️", "⌚", "📷", "🎮"],
+        random: ["💰", "💎", "🎵", "🎭", "🎨", "👑", "🧠", "👁️", "💉", "💊", "🧪", "🔮", "🧿"]
+    },
+    image: {
+        weapons: [
+            "/static/shooter/bullets/sword.png",
+            "/static/shooter/bullets/axe.png",
+            "/static/shooter/bullets/fireball.png",
+            "/static/shooter/bullets/arrow.png",
+        ],
+        magic: [
+            "/static/shooter/bullets/lightning.png",
+            "/static/shooter/bullets/ice.png",
+            "/static/shooter/bullets/magic_missile.png",
+        ]
+    },
+    gif: {
+        effects: [
+            "/static/shooter/bullets/sparkle.gif",
+            "/static/shooter/bullets/explosion.gif",
+            "/static/shooter/bullets/flame.gif",
+        ]
+    }
+};
+
+// Helper function to get a random visual
+function getRandomVisual(mediaType, category) {
+    if (!visualLibraries[mediaType] || !visualLibraries[mediaType][category]) {
+        return null;
+    }
+
+    const collection = visualLibraries[mediaType][category];
+    const item = collection[Math.floor(Math.random() * collection.length)];
+
+    return {
+        type: mediaType,
+        content: item,
+        size: 0.04 * canvas.height // Default size
+    };
+}
+
+// Add to your game documentation or as a downloadable example
+const customVisualExample = {
+    characters: {
+        mediaWizard: {
+            name: "Media Wizard",
+            type: "player",
+            backstory: "a digital sorcerer who can summon various media as weapons",
+            goal: "to showcase the power of multimedia in combat",
+            abilities: [
+                {
+                    name: 'emojiBlast',
+                    damage: 10,
+                    bulletSpeed: 0.007 * canvas.height,
+                    visual: { type: 'emoji', content: '✨', size: 0.045 * canvas.height },
+                    trailEffect: true,
+                    trailColor: "#ffff00"
+                },
+                {
+                    name: 'imageShot',
+                    damage: 15,
+                    bulletSpeed: 0.005 * canvas.height,
+                    visual: { type: 'image', content: '/static/shooter/bullets/fireball.png' }
+                },
+                {
+                    name: 'animatedSpell',
+                    damage: 20,
+                    bulletSpeed: 0.004 * canvas.height,
+                    visual: { type: 'gif', content: '/static/shooter/bullets/sparkle.gif', size: 0.06 * canvas.height },
+                    wavy: true
+                }
+            ],
+            abilityText: {
+                emojiBlast: ["EMOJI POWER!", "UNICODE ATTACK!", "SYMBOL STORM!"],
+                imageShot: ["PICTURE PERFECT!", "WORTH 1000 WORDS!", "IMAGE BOMB!"],
+                animatedSpell: ["ANIMATION MAGIC!", "GIF EXPLOSION!", "MOVING ASSAULT!"],
+                collision: ["MEDIA CRASH!", "FORMAT COLLISION!"]
+            },
+            sprites: {
+                normal: '/static/shooter/character_images/wizard.png',
+                hit: '/static/shooter/character_images/wizard_hit.png'
+            },
+            color: '#9c27b0',
+            health: 45,
+            speed: 0.004 * canvas.height
+        }
+    }
+};
+```

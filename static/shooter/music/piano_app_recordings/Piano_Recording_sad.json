@@ -1,0 +1,1448 @@
+{
+  "name": "Piano_Recording_sad",
+  "date": "2025-03-24T17:09:06.478Z",
+  "scale": "Harmonic Minor",
+  "rootNote": "C#",
+  "notes": [
+    {
+      "note": "D#5",
+      "velocity": 0.8,
+      "timestamp": 858,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 15,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C4",
+      "velocity": 0.8,
+      "timestamp": 876,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#4",
+      "velocity": 0.8,
+      "timestamp": 877,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 3,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G4",
+      "velocity": 0.8,
+      "timestamp": 885,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D5",
+      "velocity": 0.8,
+      "timestamp": 1302,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#5",
+      "velocity": 0,
+      "timestamp": 1338,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 15,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#5",
+      "velocity": 0.8,
+      "timestamp": 1747,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 15,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D5",
+      "velocity": 0,
+      "timestamp": 1769,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D5",
+      "velocity": 0.8,
+      "timestamp": 2157,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#5",
+      "velocity": 0,
+      "timestamp": 2202,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 15,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C4",
+      "velocity": 0,
+      "timestamp": 2499,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#4",
+      "velocity": 0,
+      "timestamp": 2505,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 3,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G4",
+      "velocity": 0,
+      "timestamp": 2519,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D5",
+      "velocity": 0,
+      "timestamp": 2521,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D4",
+      "velocity": 0.8,
+      "timestamp": 2599,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F4",
+      "velocity": 0.8,
+      "timestamp": 2618,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F5",
+      "velocity": 0.8,
+      "timestamp": 2624,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 17,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#4",
+      "velocity": 0.8,
+      "timestamp": 2636,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 8,
+        "scaleDegree": 6,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F5",
+      "velocity": 0,
+      "timestamp": 3026,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 17,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#5",
+      "velocity": 0.8,
+      "timestamp": 3054,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 15,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#5",
+      "velocity": 0,
+      "timestamp": 3447,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 15,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D5",
+      "velocity": 0.8,
+      "timestamp": 3494,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B4",
+      "velocity": 0.8,
+      "timestamp": 3955,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 11,
+        "scaleDegree": 7,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D5",
+      "velocity": 0,
+      "timestamp": 3980,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B4",
+      "velocity": 0,
+      "timestamp": 4184,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 11,
+        "scaleDegree": 7,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#4",
+      "velocity": 0,
+      "timestamp": 4185,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 8,
+        "scaleDegree": 6,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F4",
+      "velocity": 0,
+      "timestamp": 4212,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D4",
+      "velocity": 0,
+      "timestamp": 4212,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#4",
+      "velocity": 0.8,
+      "timestamp": 4386,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 3,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C4",
+      "velocity": 0.8,
+      "timestamp": 4409,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G4",
+      "velocity": 0.8,
+      "timestamp": 4410,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C5",
+      "velocity": 0.8,
+      "timestamp": 4418,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B4",
+      "velocity": 0.8,
+      "timestamp": 4840,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 11,
+        "scaleDegree": 7,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C5",
+      "velocity": 0,
+      "timestamp": 4886,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B4",
+      "velocity": 0,
+      "timestamp": 5240,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 11,
+        "scaleDegree": 7,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C5",
+      "velocity": 0.8,
+      "timestamp": 5245,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B4",
+      "velocity": 0.8,
+      "timestamp": 5714,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 11,
+        "scaleDegree": 7,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C5",
+      "velocity": 0,
+      "timestamp": 5836,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C4",
+      "velocity": 0,
+      "timestamp": 5968,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#4",
+      "velocity": 0,
+      "timestamp": 5991,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 3,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B4",
+      "velocity": 0,
+      "timestamp": 5994,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 11,
+        "scaleDegree": 7,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G4",
+      "velocity": 0,
+      "timestamp": 6010,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D4",
+      "velocity": 0.8,
+      "timestamp": 6093,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F4",
+      "velocity": 0.8,
+      "timestamp": 6157,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D5",
+      "velocity": 0.8,
+      "timestamp": 6158,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#4",
+      "velocity": 0.8,
+      "timestamp": 6175,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 8,
+        "scaleDegree": 6,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C5",
+      "velocity": 0.8,
+      "timestamp": 6576,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D5",
+      "velocity": 0,
+      "timestamp": 6577,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 14,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#4",
+      "velocity": 0,
+      "timestamp": 6899,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 8,
+        "scaleDegree": 6,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F4",
+      "velocity": 0,
+      "timestamp": 6920,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C5",
+      "velocity": 0,
+      "timestamp": 6958,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D4",
+      "velocity": 0,
+      "timestamp": 7010,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#4",
+      "velocity": 0.8,
+      "timestamp": 7029,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 8,
+        "scaleDegree": 6,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F4",
+      "velocity": 0.8,
+      "timestamp": 7444,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G#4",
+      "velocity": 0,
+      "timestamp": 7508,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 8,
+        "scaleDegree": 6,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F4",
+      "velocity": 0,
+      "timestamp": 7739,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G4",
+      "velocity": 0.8,
+      "timestamp": 7901,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#4",
+      "velocity": 0.8,
+      "timestamp": 8342,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 3,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "G4",
+      "velocity": 0,
+      "timestamp": 8396,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 7,
+        "scaleDegree": 5,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F4",
+      "velocity": 0.8,
+      "timestamp": 8775,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#4",
+      "velocity": 0,
+      "timestamp": 8820,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 3,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D4",
+      "velocity": 0.8,
+      "timestamp": 9205,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "F4",
+      "velocity": 0,
+      "timestamp": 9258,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 5,
+        "scaleDegree": 4,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#4",
+      "velocity": 0.8,
+      "timestamp": 9667,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 3,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D4",
+      "velocity": 0,
+      "timestamp": 9713,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C4",
+      "velocity": 0.8,
+      "timestamp": 10131,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#4",
+      "velocity": 0,
+      "timestamp": 10212,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 3,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C4",
+      "velocity": 0,
+      "timestamp": 10509,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D4",
+      "velocity": 0.8,
+      "timestamp": 10618,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B4",
+      "velocity": 0.8,
+      "timestamp": 11127,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 11,
+        "scaleDegree": 7,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "B4",
+      "velocity": 0,
+      "timestamp": 11399,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 11,
+        "scaleDegree": 7,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D4",
+      "velocity": 0,
+      "timestamp": 11400,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 2,
+        "scaleDegree": 2,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C4",
+      "velocity": 0.8,
+      "timestamp": 11684,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#4",
+      "velocity": 0.8,
+      "timestamp": 11752,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 3,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C5",
+      "velocity": 0.8,
+      "timestamp": 11828,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C5",
+      "velocity": 0,
+      "timestamp": 12953,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C5",
+      "velocity": 0.8,
+      "timestamp": 12984,
+      "isNoteOn": true,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C5",
+      "velocity": 0,
+      "timestamp": 13003,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 5
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 12,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "D#4",
+      "velocity": 0,
+      "timestamp": 13165,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 3,
+        "scaleDegree": 3,
+        "isScaleTone": true
+      }
+    },
+    {
+      "note": "C4",
+      "velocity": 0,
+      "timestamp": 13277,
+      "isNoteOn": false,
+      "scaleInfo": {
+        "scale": 7,
+        "scaleName": "Harmonic Minor",
+        "rootNote": "C",
+        "octave": 4
+      },
+      "relativeInfo": {
+        "rootNote": "C",
+        "absoluteSemitones": 0,
+        "scaleDegree": 1,
+        "isScaleTone": true
+      }
+    }
+  ]
+}
